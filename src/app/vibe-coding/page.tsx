@@ -50,7 +50,7 @@ export default function VibeCodingPage() {
                 <span className="status-badge beta" style={{ fontSize: "0.7rem" }}>Active PWA</span>
               </div>
               <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", margin: "0.5rem 0 0 0" }}>
-                A simple shared grocery list tool built to solve my family&apos;s daily Greek question: <em>&ldquo;Thes gala?&rdquo;</em> (Do you want milk?). Synced, offline-first list.
+                A simple shared grocery list tool built to solve my family&apos;s daily Greek question: <em>&ldquo;Thes gala?&rdquo;</em> (Do you want milk?). Instantly synced list.
               </p>
               <div style={{ marginTop: "0.75rem" }}>
                 <Link href="/apps" style={{ fontSize: "0.85rem", fontWeight: 600 }}>

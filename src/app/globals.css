@@ -3,6 +3,7 @@
   --primary-green: #1e7c65;
   --primary-blue-rgb: 15, 47, 89;
   --primary-green-rgb: 30, 124, 101;
+  --accent-green-light: rgba(30, 124, 101, 0.04);
 
   --bg-color: #fafbfc;
   --card-bg: #ffffff;
@@ -31,6 +32,7 @@
     --text-muted: #94a3b8;
     --text-light: #64748b;
     --border-color: #1e293b;
+    --accent-green-light: rgba(52, 211, 153, 0.08);
 
     --header-bg: rgba(11, 15, 23, 0.85);
     --header-border: rgba(30, 41, 59, 0.5);

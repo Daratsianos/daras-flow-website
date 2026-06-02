@@ -35,7 +35,7 @@ export default function TaPsoniaMasCard() {
 
       <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
         Shopping lists get messy when multiple people edit them, or when you are in the store with poor internet connection. 
-        Pare Gala focuses on solving these edge cases by providing an ultra-fast, real-time shared list that works offline inside the supermarket and auto-syncs.
+        Pare Gala focuses on solving these edge cases by providing an ultra-fast, real-time shared list.
       </p>
 
       <div style={{ marginTop: "1rem", padding: "1rem", backgroundColor: "rgba(15, 47, 89, 0.04)", borderRadius: "8px", borderLeft: "3px solid var(--primary-blue)" }}>
@@ -47,7 +47,7 @@ export default function TaPsoniaMasCard() {
       <ul className="card-notes" style={{ marginTop: "1.25rem", marginBottom: "1.5rem" }}>
         <li className="card-note-item">mobile-first design</li>
         <li className="card-note-item">simple shared lists</li>
-        <li className="card-note-item">offline-friendly PWA</li>
+        <li className="card-note-item">PWA</li>
       </ul>
 
       <div className="cta-group" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1.5rem" }}>

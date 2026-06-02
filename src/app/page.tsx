@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import TaPsoniaMasCard from "@/components/TaPsoniaMasCard";
+import HonestCalCard from "@/components/HonestCalCard";
 
 export const metadata: Metadata = {
   title: "Daras Flow | Practical Apps & Workflow Tools",
@@ -34,55 +36,9 @@ export default function Home() {
       {/* 3. App Showcase Section */}
       <section id="apps" style={{ marginBottom: "4rem", scrollMarginTop: "6rem" }}>
         <h2>Our Apps</h2>
-        <div style={{ marginTop: "1.5rem", display: "grid", gap: "1.5rem" }}>
-          
-          <div className="card" style={{ marginBottom: 0 }}>
-            <div className="card-title-group">
-              <h3 className="card-title" style={{ fontSize: "1.35rem" }}>
-                <a href="https://paregala.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-                  Ta Psonia Mas
-                </a>
-              </h3>
-              <span className="status-badge development">Coming soon</span>
-            </div>
-            <p style={{ color: "var(--text-main)", marginBottom: "0.5rem", fontWeight: "500" }}>
-              A simple shared grocery list app for families.
-            </p>
-            <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", margin: "0 0 1rem 0" }}>
-              Built for my family first to answer the constant Greek question: <em>&ldquo;Thes gala?&rdquo;</em> (Do you want milk?). 
-              That is where the domain name comes from (<em>&ldquo;Pare gala&rdquo;</em> / Get milk). 
-              The app translates to &ldquo;Our Groceries&rdquo; and solves a common headache: managing shared shopping lists instantly, working offline inside the supermarket, and syncing seamlessly when back online.
-            </p>
-            <ul className="card-notes" style={{ marginTop: "0.75rem" }}>
-              <li className="card-note-item">mobile-first</li>
-              <li className="card-note-item">simple shared lists</li>
-              <li className="card-note-item">offline-friendly</li>
-            </ul>
-          </div>
-
-          <div className="card" style={{ marginBottom: 0 }}>
-            <div className="card-title-group">
-              <h3 className="card-title" style={{ fontSize: "1.35rem" }}>
-                <a href="https://honestcal.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-                  HonestCal
-                </a>
-              </h3>
-              <span className="status-badge beta">Coming soon</span>
-            </div>
-            <p style={{ color: "var(--text-main)", marginBottom: "0.5rem", fontWeight: "500" }}>
-              AI-assisted calorie logging focused on realistic food tracking.
-            </p>
-            <p style={{ color: "var(--text-muted)", fontSize: "0.92rem", margin: "0 0 1rem 0" }}>
-              I lost 30 kilos and have kept it off for more than 6 years. I couldn&apos;t find an accurate, honest tracker that let me log fast without database bloat—so I built one. 
-              Built around consistency, accuracy, and absolute honesty, the app estimates meals using AI and explicitly tells you what it assumed you ate, letting you review and adjust before logging.
-            </p>
-            <ul className="card-notes" style={{ marginTop: "0.75rem" }}>
-              <li className="card-note-item">private food tracking</li>
-              <li className="card-note-item">AI text/photo estimates</li>
-              <li className="card-note-item">honest assumptions, no fake precision</li>
-            </ul>
-          </div>
-
+        <div style={{ marginTop: "1.5rem", display: "grid", gap: "2rem" }}>
+          <TaPsoniaMasCard />
+          <HonestCalCard />
         </div>
       </section>
 
