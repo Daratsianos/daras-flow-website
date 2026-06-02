@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import TaPsoniaMasCard from "@/components/TaPsoniaMasCard";
 
 export const metadata: Metadata = {
   title: "Apps",
@@ -19,37 +20,7 @@ export default function AppsPage() {
 
       <section style={{ display: "grid", gap: "2rem" }}>
         {/* App 1: Ta Psonia Mas */}
-        <div className="card" style={{ margin: 0 }}>
-          <div className="card-title-group">
-            <h2 style={{ border: "none", margin: 0, padding: 0, fontSize: "1.5rem" }}>
-              <a href="https://paregala.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
-                Ta Psonia Mas (Our Groceries)
-              </a>
-            </h2>
-            <span className="status-badge development">Coming soon</span>
-          </div>
-          
-          <p style={{ fontSize: "1.05rem", color: "var(--text-main)", marginTop: "1rem", fontWeight: "500" }}>
-            A shared grocery list app for families who want one simple place to manage shopping.
-          </p>
-
-          <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
-            Shopping lists get messy when multiple people edit them, or when you are in the store with poor internet connection. 
-            Ta Psonia Mas focuses on solving these edge cases by providing an ultra-fast, real-time shared list that works offline inside the supermarket and auto-syncs.
-          </p>
-
-          <div style={{ marginTop: "1rem", padding: "1rem", backgroundColor: "var(--accent-blue-light)", borderRadius: "8px", borderLeft: "3px solid var(--primary-blue)" }}>
-            <p style={{ margin: 0, fontSize: "0.9rem", fontStyle: "italic", color: "var(--text-main)" }}>
-              <strong>The Story:</strong> I built this app for my family first. In Greek households, there is a constant, everyday question: <em>&ldquo;Thes gala?&rdquo;</em> (&ldquo;Do you want milk?&rdquo;). This running joke is where the domain name comes from (<em>&ldquo;Pare gala&rdquo;</em> / &ldquo;Get milk&rdquo;). I wanted a tool that solved this exact communication loop simply and reliably, keeping our groceries sync-clean.
-            </p>
-          </div>
-
-          <ul className="card-notes" style={{ marginTop: "1.25rem" }}>
-            <li className="card-note-item">mobile-first design</li>
-            <li className="card-note-item">simple shared lists</li>
-            <li className="card-note-item">offline-friendly goal</li>
-          </ul>
-        </div>
+        <TaPsoniaMasCard />
 
         {/* App 2: HonestCal */}
         <div className="card" style={{ margin: 0 }}>
