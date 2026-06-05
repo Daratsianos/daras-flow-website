@@ -11,7 +11,7 @@ export default function AboutPage() {
   return (
     <div className="wrapper">
       <section style={{ marginBottom: "2rem" }}>
-        <h1>About Panos</h1>
+        <h1 className="hero-title">About Panos</h1>
       </section>
 
       <div className="profile-container">
@@ -26,7 +26,7 @@ export default function AboutPage() {
           />
         </div>
         <div style={{ flex: 1, textAlign: "left" }}>
-          <p style={{ fontSize: "1.1rem", fontWeight: "500", margin: 0, color: "var(--primary-blue)" }}>
+          <p style={{ fontSize: "1.1rem", fontWeight: "500", margin: 0, color: "var(--primary-accent-color)" }}>
             Founder of Daras Flow
           </p>
           <p style={{ fontSize: "0.95rem", color: "var(--text-muted)", margin: "0.25rem 0 0 0" }}>
@@ -36,7 +36,7 @@ export default function AboutPage() {
       </div>
 
       <section style={{ display: "grid", gap: "1.5rem", fontSize: "1.05rem", color: "var(--text-main)" }}>
-        <p style={{ fontSize: "1.15rem", fontWeight: "500", color: "var(--primary-blue)" }}>
+        <p style={{ fontSize: "1.15rem", fontWeight: "500", color: "var(--primary-accent-color)" }}>
           I believe work should be simpler, faster, and less of a headache. My goal is that after I step in, people can say: &ldquo;Things became predictable. Maybe even boring, in the best way.&rdquo;
         </p>
 

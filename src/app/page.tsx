@@ -14,10 +14,10 @@ export default function Home() {
     <div className="wrapper">
       {/* 1. Hero Section */}
       <section style={{ marginBottom: "3.5rem", paddingTop: "1rem" }}>
-        <h1 style={{ fontSize: "2.6rem", marginBottom: "1rem", lineHeight: "1.25" }}>
+        <h1 className="hero-title">
           Daras Flow builds practical apps and workflow tools that reduce friction.
         </h1>
-        <p style={{ fontSize: "1.2rem", maxWidth: "680px", color: "var(--text-muted)", marginBottom: "2rem" }}>
+        <p className="hero-subtitle">
           Lightweight, single-purpose digital tools designed to make everyday operations and daily life less clunky. 
           Built with an optimization mindset by Panos Daratsianos.
         </p>
@@ -56,15 +56,10 @@ export default function Home() {
       </section>
 
       {/* 5. Tiny Consulting Note */}
-      <section style={{ marginBottom: "1rem" }}>
-        <div style={{ 
-          backgroundColor: "var(--card-bg)", 
-          border: "1px solid var(--border-color)", 
-          borderRadius: "8px", 
-          padding: "1.5rem"
-        }}>
-          <h3 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Workflow Consulting</h3>
-          <p style={{ margin: 0, fontSize: "0.95rem", color: "var(--text-muted)", lineHeight: "1.5" }}>
+      <section style={{ marginBottom: "1.5rem" }}>
+        <div className="card" style={{ margin: 0, padding: "1.75rem" }}>
+          <h3 style={{ fontSize: "1.15rem", marginBottom: "0.5rem" }}>Workflow Consulting</h3>
+          <p style={{ margin: 0, fontSize: "0.95rem", color: "var(--text-muted)", lineHeight: "1.6" }}>
             I occasionally take on selected workflow automation and process simplification projects for businesses. 
             If you have a messy operational problem that needs a lightweight, custom tool or system integration, get in touch: <a href="mailto:panos@darasflow.com">panos@darasflow.com</a>.
           </p>

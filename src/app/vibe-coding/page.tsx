@@ -11,10 +11,10 @@ export default function VibeCodingPage() {
   return (
     <div className="wrapper">
       <section style={{ marginBottom: "2.5rem" }}>
-        <h1 style={{ fontFamily: "var(--font-mono)", fontSize: "2rem" }}>
+        <h1 className="hero-title" style={{ fontFamily: "var(--font-mono)" }}>
           Panos is vibe coding
         </h1>
-        <p style={{ fontSize: "1.2rem", color: "var(--primary-green)", fontWeight: "500", marginTop: "0.5rem" }}>
+        <p className="hero-subtitle" style={{ color: "var(--primary-green)" }}>
           I use AI-assisted development to turn annoying everyday problems into small useful apps fast.
         </p>
       </section>

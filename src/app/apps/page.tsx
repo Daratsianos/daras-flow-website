@@ -12,8 +12,8 @@ export default function AppsPage() {
   return (
     <div className="wrapper">
       <section style={{ marginBottom: "2rem" }}>
-        <h1>Our Apps</h1>
-        <p style={{ color: "var(--text-muted)", fontSize: "1.1rem" }}>
+        <h1 className="hero-title">Our Apps</h1>
+        <p className="hero-subtitle">
           We focus on building lightweight, single-purpose applications that solve practical everyday problems.
           No complex interfaces, no data bloat.
         </p>
