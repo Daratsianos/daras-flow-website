@@ -58,9 +58,12 @@ export default function AboutPage() {
       </div>
 
       <div className="experience-strip">
+        <span className="experience-label">Currently at</span>
+        <span className="experience-companies">Rituals</span>
+        <span className="experience-companies" style={{ color: "var(--text-light)", margin: "0 0.25rem" }}>|</span>
         <span className="experience-label">Previously at</span>
         <span className="experience-companies">
-          Booking.com · Rituals · VanMoof · Publicis Groupe · Hitachi
+          Booking.com · VanMoof · Publicis Groupe · Hitachi
         </span>
       </div>
 
