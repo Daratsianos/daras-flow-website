@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 
-export default function TaPsoniaMasCard() {
+export default function PareGalaCard() {
   const [showQR, setShowQR] = useState(false);
   const [copied, setCopied] = useState(false);
   const appUrl = "https://paregala.com";
@@ -19,44 +19,43 @@ export default function TaPsoniaMasCard() {
   };
 
   return (
-    <div className="card" style={{ margin: 0 }}>
+    <div className="card flush">
       <div className="card-title-group">
-        <h2 style={{ border: "none", margin: 0, padding: 0, fontSize: "1.5rem" }}>
-          <a href={appUrl} target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+        <h2 className="app-card-title">
+          <a href={appUrl} target="_blank" rel="noopener noreferrer" className="app-link">
             Pare Gala (Our Groceries)
           </a>
         </h2>
         <span className="status-badge beta">Active PWA</span>
       </div>
 
-      <p style={{ fontSize: "1.05rem", color: "var(--text-main)", marginTop: "1rem", fontWeight: "500" }}>
+      <p className="app-tagline">
         A shared grocery list app for families who want one simple place to manage shopping.
       </p>
 
-      <p style={{ color: "var(--text-muted)", fontSize: "0.95rem" }}>
-        Shopping lists get messy when multiple people edit them, or when you are in the store with poor internet connection. 
+      <p className="app-desc">
+        Shopping lists get messy when multiple people edit them, or when you are in the store with poor internet connection.
         Pare Gala focuses on solving these edge cases by providing an ultra-fast, real-time shared list.
       </p>
 
-      <div style={{ marginTop: "1rem", padding: "1rem", backgroundColor: "rgba(15, 47, 89, 0.04)", borderRadius: "8px", borderLeft: "3px solid var(--primary-blue)" }}>
-        <p style={{ margin: 0, fontSize: "0.9rem", fontStyle: "italic", color: "var(--text-main)" }}>
-          <strong>The Story:</strong> I built this app to solve a classic Greek household emergency: standing at the supermarket checkout and getting that last-minute shout from home, <em>&ldquo;Pare gala!&rdquo;</em> (&ldquo;Get milk!&rdquo;). That running joke, and the frustration of forgetting the most essential item, is where the name comes from. I wanted a simple tool that syncs family shopping lists instantly, so no one ever forgets the milk.
+      <div className="story story-blue">
+        <p>
+          <strong>The Story:</strong> I built this app to solve a classic Greek household emergency: standing at the supermarket checkout and getting that last-minute shout from home, <em>&ldquo;Pare gala!&rdquo;</em>{" "}(&ldquo;Get milk!&rdquo;). That running joke, and the frustration of forgetting the most essential item, is where the name comes from. I wanted a simple tool that syncs family shopping lists instantly, so no one ever forgets the milk.
         </p>
       </div>
 
-      <ul className="card-notes" style={{ marginTop: "1.25rem", marginBottom: "1.5rem" }}>
+      <ul className="card-notes" style={{ marginBottom: "1.5rem" }}>
         <li className="card-note-item">mobile-first design</li>
         <li className="card-note-item">simple shared lists</li>
         <li className="card-note-item">PWA</li>
       </ul>
 
-      <div className="cta-group" style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginTop: "1.5rem" }}>
+      <div className="cta-group">
         <a
           href={appUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-primary"
-          style={{ textDecoration: "none" }}
         >
           Open App
         </a>
@@ -64,7 +63,7 @@ export default function TaPsoniaMasCard() {
           type="button"
           onClick={() => setShowQR(!showQR)}
           className="btn btn-secondary"
-          style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
+          style={{ gap: "0.5rem" }}
         >
           <svg
             width="16"
@@ -92,31 +91,8 @@ export default function TaPsoniaMasCard() {
       </div>
 
       {showQR && (
-        <div
-          style={{
-            marginTop: "1.5rem",
-            padding: "1.5rem",
-            backgroundColor: "var(--bg-color)",
-            borderRadius: "12px",
-            border: "1px solid var(--border-color)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "1rem",
-          }}
-        >
-          <div
-            style={{
-              padding: "1rem",
-              backgroundColor: "#ffffff",
-              borderRadius: "8px",
-              boxShadow: "var(--shadow-sm)",
-              border: "1px solid var(--border-color)",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
+        <div className="qr-panel">
+          <div className="qr-frame">
             <QRCodeSVG
               value={appUrl}
               size={160}
@@ -125,21 +101,13 @@ export default function TaPsoniaMasCard() {
               style={{ display: "block" }}
             />
           </div>
-          <p style={{ margin: 0, fontSize: "0.95rem", color: "var(--text-muted)", fontWeight: "500", textAlign: "center" }}>
-            Scan to open this shopping list.
-          </p>
-          <div style={{ display: "flex", gap: "0.5rem" }}>
+          <p className="qr-caption">Scan to open this shopping list.</p>
+          <div className="qr-actions">
             <button
               type="button"
               onClick={handleCopy}
-              className="btn btn-secondary"
-              style={{
-                padding: "0.4rem 1rem",
-                fontSize: "0.85rem",
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.25rem",
-              }}
+              className="btn btn-secondary btn-sm"
+              style={{ gap: "0.25rem" }}
             >
               <svg
                 width="14"
@@ -159,12 +127,8 @@ export default function TaPsoniaMasCard() {
             <button
               type="button"
               onClick={() => setShowQR(false)}
-              className="btn btn-secondary"
-              style={{
-                padding: "0.4rem 1rem",
-                fontSize: "0.85rem",
-                color: "var(--text-muted)",
-              }}
+              className="btn btn-secondary btn-sm"
+              style={{ color: "var(--text-muted)" }}
             >
               Close
             </button>

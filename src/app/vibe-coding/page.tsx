@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function VibeCodingPage() {
   return (
     <div className="wrapper">
-      <section style={{ marginBottom: "2.5rem" }}>
+      <section className="page-header">
         <h1 className="hero-title" style={{ fontFamily: "var(--font-mono)" }}>
           Panos is vibe coding
         </h1>
@@ -19,13 +19,13 @@ export default function VibeCodingPage() {
         </p>
       </section>
 
-      <section style={{ display: "grid", gap: "2.5rem", fontSize: "1.05rem" }}>
+      <section className="sections">
         {/* Section 1: What this means */}
         <div>
           <h2>What this means</h2>
-          <p style={{ marginTop: "1rem" }}>
-            This is not polished startup theatre. There is no pitch deck, no endless planning cycles, and no corporate committee. 
-            Vibe coding is about moving directly from an observation or irritation to a working solution. 
+          <p>
+            This is not polished startup theatre. There is no pitch deck, no endless planning cycles, and no corporate committee.
+            Vibe coding is about moving directly from an observation or irritation to a working solution.
             I see a workflow bottleneck or an everyday hassle, pair program with AI to write the code, and launch a working prototype as quickly as possible.
           </p>
           <p>
@@ -36,39 +36,39 @@ export default function VibeCodingPage() {
         {/* Section 2: Current experiments */}
         <div>
           <h2>Current experiments</h2>
-          <p style={{ marginTop: "1rem" }}>
+          <p>
             These are the current active projects undergoing rapid iteration:
           </p>
-          <div style={{ display: "grid", gap: "1rem", marginTop: "1.25rem" }}>
-            <div className="card" style={{ margin: 0, padding: "1.25rem" }}>
+          <div className="experiment-grid">
+            <div className="card card-compact">
               <div className="card-title-group">
-                <h3 style={{ fontSize: "1.1rem" }}>
-                  <a href="https://paregala.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                <h3 className="card-title-sm">
+                  <a href="https://paregala.com" target="_blank" rel="noopener noreferrer" className="app-link">
                     Pare Gala (Our Groceries)
                   </a>
                 </h3>
-                <span className="status-badge beta" style={{ fontSize: "0.7rem" }}>Active PWA</span>
+                <span className="status-badge beta">Active PWA</span>
               </div>
-              <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", margin: "0.5rem 0 0 0" }}>
+              <p className="card-desc-sm">
                 A simple shared grocery list tool built to solve my family&apos;s daily Greek question: <em>&ldquo;Thes gala?&rdquo;</em> (Do you want milk?). Instantly synced list.
               </p>
-              <div style={{ marginTop: "0.75rem" }}>
-                <Link href="/apps" style={{ fontSize: "0.85rem", fontWeight: 600 }}>
+              <div className="card-action">
+                <Link href="/apps" className="card-link">
                   → View QR Code & Share Flow
                 </Link>
               </div>
             </div>
-            
-            <div className="card" style={{ margin: 0, padding: "1.25rem" }}>
+
+            <div className="card card-compact">
               <div className="card-title-group">
-                <h3 style={{ fontSize: "1.1rem" }}>
-                  <a href="https://honestcal.com" target="_blank" rel="noopener noreferrer" style={{ color: "inherit" }}>
+                <h3 className="card-title-sm">
+                  <a href="https://honestcal.com" target="_blank" rel="noopener noreferrer" className="app-link">
                     HonestCal
                   </a>
                 </h3>
-                <span className="status-badge beta" style={{ fontSize: "0.7rem" }}>Beta testing</span>
+                <span className="status-badge beta">Beta</span>
               </div>
-              <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", margin: "0.5rem 0 0 0" }}>
+              <p className="card-desc-sm">
                 A calorie estimation utility powered by LLMs, inspired by my personal experience of losing 30 kilos and keeping it off for over 6 years. Built for speed and honest tracking.
               </p>
             </div>
@@ -78,35 +78,35 @@ export default function VibeCodingPage() {
         {/* Section 3: Principles */}
         <div>
           <h2>My Principles</h2>
-          <div className="how-we-work-list" style={{ marginTop: "1.25rem" }}>
+          <div className="how-we-work-list mono" style={{ marginTop: "1.25rem" }}>
             <div className="how-we-work-item">
-              <span className="step-num" style={{ fontFamily: "var(--font-mono)" }}>1</span>
+              <span className="step-num">1</span>
               <div className="step-text">
-                <strong>Solve real problems:</strong> If an app doesn&apos;t save time or solve a specific annoyance, it shouldn&apos;t exist.
+                <strong>Solve real problems:</strong>{" "}If an app doesn&apos;t save time or solve a specific annoyance, it shouldn&apos;t exist.
               </div>
             </div>
             <div className="how-we-work-item">
-              <span className="step-num" style={{ fontFamily: "var(--font-mono)" }}>2</span>
+              <span className="step-num">2</span>
               <div className="step-text">
-                <strong>Ship small:</strong> Deliver a functional core on day one instead of building broad, unused systems.
+                <strong>Ship small:</strong>{" "}Deliver a functional core on day one instead of building broad, unused systems.
               </div>
             </div>
             <div className="how-we-work-item">
-              <span className="step-num" style={{ fontFamily: "var(--font-mono)" }}>3</span>
+              <span className="step-num">3</span>
               <div className="step-text">
-                <strong>Get feedback early:</strong> Test assumptions immediately with actual usage and real-world edge cases.
+                <strong>Get feedback early:</strong>{" "}Test assumptions immediately with actual usage and real-world edge cases.
               </div>
             </div>
             <div className="how-we-work-item">
-              <span className="step-num" style={{ fontFamily: "var(--font-mono)" }}>4</span>
+              <span className="step-num">4</span>
               <div className="step-text">
-                <strong>Keep the product simple:</strong> Maintain a minimal interface that does one job extremely well.
+                <strong>Keep the product simple:</strong>{" "}Maintain a minimal interface that does one job extremely well.
               </div>
             </div>
             <div className="how-we-work-item">
-              <span className="step-num" style={{ fontFamily: "var(--font-mono)" }}>5</span>
+              <span className="step-num">5</span>
               <div className="step-text">
-                <strong>Avoid fake complexity:</strong> Say no to bloated architectures, complex state frameworks, and unnecessary dependencies.
+                <strong>Avoid fake complexity:</strong>{" "}Say no to bloated architectures, complex state frameworks, and unnecessary dependencies.
               </div>
             </div>
           </div>

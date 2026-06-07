@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="wrapper">
-      <section style={{ marginBottom: "2rem" }}>
+      <section className="page-header">
         <h1 className="hero-title">About Panos</h1>
       </section>
 
@@ -22,21 +22,17 @@ export default function AboutPage() {
             width={140}
             height={140}
             priority
-            style={{ objectFit: "cover", objectPosition: "60% top" }}
+            style={{ objectFit: "cover", objectPosition: "center top" }}
           />
         </div>
-        <div style={{ flex: 1, textAlign: "left" }}>
-          <p style={{ fontSize: "1.1rem", fontWeight: "500", margin: 0, color: "var(--primary-accent-color)" }}>
-            Founder of Daras Flow
-          </p>
-          <p style={{ fontSize: "0.95rem", color: "var(--text-muted)", margin: "0.25rem 0 0 0" }}>
-            Zaandam, Netherlands
-          </p>
+        <div className="profile-text">
+          <p className="profile-role">Founder of Daras Flow</p>
+          <p className="profile-loc">Zaandam, Netherlands</p>
         </div>
       </div>
 
-      <section style={{ display: "grid", gap: "1.5rem", fontSize: "1.05rem", color: "var(--text-main)" }}>
-        <p style={{ fontSize: "1.15rem", fontWeight: "500", color: "var(--primary-accent-color)" }}>
+      <section className="prose">
+        <p className="prose-lead">
           I believe work should be simpler, faster, and less of a headache. My goal is that after I step in, people can say: &ldquo;Things became predictable. Maybe even boring, in the best way.&rdquo;
         </p>
 

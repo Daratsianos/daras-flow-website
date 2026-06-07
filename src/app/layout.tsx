@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Panos Daratsianos",
     "Workflow Automation",
     "Software Studio",
-    "Ta Psonia Mas",
+    "Pare Gala",
     "HonestCal",
     "Process Optimization",
     "Finance Transformation",
@@ -43,6 +43,12 @@ export const metadata: Metadata = {
     siteName: "Daras Flow",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Daras Flow | Practical Apps & Automation",
+    description:
+      "Daras Flow builds simple, lightweight digital tools and workflow automations for real-world problems.",
   },
   robots: {
     index: true,
