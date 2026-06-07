@@ -156,6 +156,10 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   height: 4.5rem;
+  /* Header bar spans the full viewport width (logo hard-left, nav hard-right)
+     instead of being confined to the narrow content column. Page content below
+     still uses the 760px .wrapper. */
+  max-width: none;
 }
 
 .logo-link {
