@@ -14,10 +14,17 @@ export default function Header() {
     return pathname.startsWith(path);
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === href) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="header-wrapper">
       <div className="wrapper header">
-        <Link href="/" className="logo-link">
+        <Link href="/" className="logo-link" onClick={(e) => handleLinkClick(e, "/")}>
           <Image
             src="/logo.png"
             alt="Daras Flow Logo"
@@ -31,18 +38,21 @@ export default function Header() {
           <Link
             href="/apps"
             className={`nav-link ${isLinkActive("/apps") ? "active" : ""}`}
+            onClick={(e) => handleLinkClick(e, "/apps")}
           >
             Apps
           </Link>
           <Link
             href="/about"
             className={`nav-link ${isLinkActive("/about") ? "active" : ""}`}
+            onClick={(e) => handleLinkClick(e, "/about")}
           >
             About
           </Link>
           <Link
             href="/vibe-coding"
             className={`nav-link ${isLinkActive("/vibe-coding") ? "active" : ""}`}
+            onClick={(e) => handleLinkClick(e, "/vibe-coding")}
           >
             Vibe Coding
           </Link>
