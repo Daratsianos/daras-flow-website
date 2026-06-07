@@ -734,6 +734,66 @@ a:hover {
   margin: 0.25rem 0 0 0;
 }
 
+/* Founder social links */
+.social-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.social-link:hover {
+  color: var(--primary-green);
+  border-color: rgba(var(--primary-green-rgb), 0.4);
+  background-color: rgba(var(--primary-green-rgb), 0.04);
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .social-link:hover {
+    color: #34d399;
+    border-color: rgba(52, 211, 153, 0.4);
+    background-color: rgba(52, 211, 153, 0.06);
+  }
+}
+
+/* "Previously at" experience strip */
+.experience-strip {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin: 0 0 2.5rem;
+}
+
+.experience-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+}
+
+.experience-companies {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
 /* ---- Consulting call-to-action (elevated) ---- */
 .consult {
   margin: 0;

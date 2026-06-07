@@ -91,6 +91,20 @@ export default function RootLayout({
             <div className="footer-bottom">
               <p>&copy; {new Date().getFullYear()} Daras Flow. All rights reserved.</p>
               <div className="footer-bottom-links">
+                <a
+                  href="https://www.linkedin.com/in/panos-daratsianos-48279955/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/Daratsianos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
                 <Link href="/privacy">Privacy Policy</Link>
               </div>
             </div>
