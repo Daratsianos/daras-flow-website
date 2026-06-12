@@ -1200,9 +1200,27 @@ html.js .reveal.is-visible {
   }
 }
 
-/* Draw-in animation (paths are normalized with pathLength=1).
+/* Logo chevrons at the end of the line (navy + green, like the mark) */
+.flow-chevron-a {
+  stroke: var(--primary-green);
+}
+
+.flow-chevron-b {
+  stroke: var(--primary-blue);
+}
+
+@media (prefers-color-scheme: dark) {
+  .flow-chevron-a {
+    stroke: #34d399;
+  }
+  .flow-chevron-b {
+    stroke: #38bdf8;
+  }
+}
+
+/* Draw-in animation (the line path is normalized with pathLength=1).
    Fully drawn by default; only hidden/animated when JS is present. */
-.flow-line path {
+.flow-line .flow-path {
   stroke-dasharray: 1;
   stroke-dashoffset: 0;
 }
@@ -1213,17 +1231,57 @@ html.js .reveal.is-visible {
   }
 }
 
-html.js .flow-line-hero path {
+@keyframes flow-chevron-in {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+html.js .flow-line-hero .flow-path {
   stroke-dashoffset: 1;
   animation: flow-draw 1.6s 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-html.js .reveal .flow-line-divider path {
+html.js .flow-line-hero .flow-chevron {
+  opacity: 0;
+  animation: flow-chevron-in 0.5s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+html.js .flow-line-hero .flow-chevron-a {
+  animation-delay: 1.7s;
+}
+
+html.js .flow-line-hero .flow-chevron-b {
+  animation-delay: 1.85s;
+}
+
+html.js .reveal .flow-line-divider .flow-path {
   stroke-dashoffset: 1;
 }
 
-html.js .reveal.is-visible .flow-line-divider path {
+html.js .reveal .flow-line-divider .flow-chevron {
+  opacity: 0;
+}
+
+html.js .reveal.is-visible .flow-line-divider .flow-path {
   animation: flow-draw 1.4s 0.2s ease-out forwards;
+}
+
+html.js .reveal.is-visible .flow-line-divider .flow-chevron {
+  animation: flow-chevron-in 0.45s ease-out forwards;
+}
+
+html.js .reveal.is-visible .flow-line-divider .flow-chevron-a {
+  animation-delay: 1.25s;
+}
+
+html.js .reveal.is-visible .flow-line-divider .flow-chevron-b {
+  animation-delay: 1.4s;
 }
 
 /* ---- Microinteractions ---- */
@@ -1262,8 +1320,10 @@ html.js .reveal.is-visible .flow-line-divider path {
   .hero .cta-group,
   .enter,
   .hero-aurora span,
-  html.js .flow-line-hero path,
-  html.js .reveal.is-visible .flow-line-divider path {
+  html.js .flow-line-hero .flow-path,
+  html.js .flow-line-hero .flow-chevron,
+  html.js .reveal.is-visible .flow-line-divider .flow-path,
+  html.js .reveal.is-visible .flow-line-divider .flow-chevron {
     animation: none !important;
   }
 
@@ -1273,10 +1333,14 @@ html.js .reveal.is-visible .flow-line-divider path {
     transition: none !important;
   }
 
-  .flow-line path,
-  html.js .flow-line-hero path,
-  html.js .reveal .flow-line-divider path {
+  .flow-line .flow-path,
+  html.js .flow-line-hero .flow-path,
+  html.js .reveal .flow-line-divider .flow-path {
     stroke-dashoffset: 0 !important;
+  }
+
+  html.js .flow-line .flow-chevron {
+    opacity: 1 !important;
   }
 }
 

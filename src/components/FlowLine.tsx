@@ -1,21 +1,34 @@
-// Decorative "flow" motif: a wavy line that settles into a smooth stream,
-// echoing the brand promise of turning friction into flow.
-const PATHS = {
-  hero: "M0 34 C 60 6, 120 58, 180 34 C 232 14, 284 52, 336 34 C 382 20, 428 46, 474 34 C 516 26, 558 40, 600 34 C 654 29, 707 35, 760 33",
-  divider:
-    "M0 14 C 95 4, 190 24, 285 14 C 380 6, 475 21, 570 14 C 665 9, 712 15, 760 13",
+// Decorative "friction → flow" motif: the line starts as a sharp jag
+// (friction), settles into a clean straight run (flow), and resolves into
+// the double chevron from the Daras Flow logo.
+const VARIANTS = {
+  hero: {
+    viewBox: "0 0 760 64",
+    line: "M0 32 L16 13 L34 49 L52 17 L70 45 L88 21 L106 41 L124 25 L142 37 L158 28.5 L174 34.5 C194 30.5 214 32 244 32 L692 32",
+    chevrons: ["M706 17 L721 32 L706 47", "M728 17 L743 32 L728 47"],
+    lineWidth: 2.5,
+    chevronWidth: 3,
+  },
+  divider: {
+    viewBox: "0 0 760 28",
+    line: "M0 14 L12 7 L26 20 L40 9 L54 18 L68 11 L82 16 C96 13.5 110 14 130 14 L706 14",
+    chevrons: ["M716 8 L722 14 L716 20", "M728 8 L734 14 L728 20"],
+    lineWidth: 1.5,
+    chevronWidth: 2,
+  },
 } as const;
 
 type FlowLineProps = {
-  variant?: keyof typeof PATHS;
+  variant?: keyof typeof VARIANTS;
 };
 
 export default function FlowLine({ variant = "divider" }: FlowLineProps) {
+  const { viewBox, line, chevrons, lineWidth, chevronWidth } = VARIANTS[variant];
   const gradientId = `flow-grad-${variant}`;
   return (
     <svg
       className={`flow-line flow-line-${variant}`}
-      viewBox={variant === "hero" ? "0 0 760 64" : "0 0 760 28"}
+      viewBox={viewBox}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -34,11 +47,26 @@ export default function FlowLine({ variant = "divider" }: FlowLineProps) {
         </linearGradient>
       </defs>
       <path
-        d={PATHS[variant]}
+        className="flow-path"
+        d={line}
         stroke={`url(#${gradientId})`}
-        strokeWidth={variant === "hero" ? 2.5 : 1.5}
+        strokeWidth={lineWidth}
         strokeLinecap="round"
         pathLength={1}
+      />
+      <path
+        className="flow-chevron flow-chevron-a"
+        d={chevrons[0]}
+        strokeWidth={chevronWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        className="flow-chevron flow-chevron-b"
+        d={chevrons[1]}
+        strokeWidth={chevronWidth}
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -64,7 +64,7 @@ export default function AboutPage() {
         <span className="experience-companies" style={{ color: "var(--text-light)", margin: "0 0.25rem" }}>|</span>
         <span className="experience-label">Previously at</span>
         <span className="experience-companies">
-          Booking.com · VanMoof · Publicis Groupe · Hitachi
+          Booking.com · VanMoof · Hitachi
         </span>
       </div>
 
