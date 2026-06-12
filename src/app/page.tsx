@@ -3,6 +3,8 @@ import Link from "next/link";
 import PareGalaCard from "@/components/PareGalaCard";
 import HonestCalCard from "@/components/HonestCalCard";
 import ConsultCTA from "@/components/ConsultCTA";
+import Reveal from "@/components/Reveal";
+import FlowLine from "@/components/FlowLine";
 
 export const metadata: Metadata = {
   title: "Daras Flow | Practical Apps & Workflow Tools",
@@ -79,6 +81,11 @@ export default function Home() {
       />
       {/* 1. Hero */}
       <section className="hero">
+        <div className="hero-aurora" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </div>
         <h1 className="hero-title">
           Daras Flow builds practical apps and workflow tools that reduce friction.
         </h1>
@@ -86,6 +93,7 @@ export default function Home() {
           Lightweight, single-purpose digital tools designed to make everyday operations and daily life less clunky.
           Built with an optimization mindset by Panos Daratsianos.
         </p>
+        <FlowLine variant="hero" />
 
         {/* Main CTA */}
         <div className="cta-group">
@@ -100,29 +108,40 @@ export default function Home() {
 
       {/* 2. App showcase */}
       <section id="apps" className="section anchor-offset">
-        <h2>The Apps</h2>
+        <Reveal>
+          <h2>The Apps</h2>
+        </Reveal>
         <div className="app-grid">
-          <PareGalaCard />
-          <HonestCalCard />
+          <Reveal>
+            <PareGalaCard />
+          </Reveal>
+          <Reveal delay={120}>
+            <HonestCalCard />
+          </Reveal>
         </div>
       </section>
 
       {/* 3. Methodology */}
       <section className="section">
-        <h2>The Artisan Mindset</h2>
-        <p className="lead">
-          Every app is built with what Nassim Nicholas Taleb calls having <strong>&ldquo;Soul in the Game.&rdquo;</strong>{" "}
-          As an artisan, I oversee the entire lifecycle of what I build, taking personal responsibility for the final utility.
-          This means refusing to ship compromised, defective, or bloated products. I map how people actually work, identify where the friction occurs, and build the smallest, most direct tool to solve it.
-        </p>
-        <p className="muted">
-          This approach is grounded in process engineering and finance transformation work at companies like <strong>Booking.com</strong>, <strong>Rituals</strong>, and <strong>VanMoof</strong>.
-        </p>
+        <Reveal>
+          <FlowLine />
+          <h2>The Artisan Mindset</h2>
+          <p className="lead">
+            Every app is built with what Nassim Nicholas Taleb calls having <strong>&ldquo;Soul in the Game.&rdquo;</strong>{" "}
+            As an artisan, I oversee the entire lifecycle of what I build, taking personal responsibility for the final utility.
+            This means refusing to ship compromised, defective, or bloated products. I map how people actually work, identify where the friction occurs, and build the smallest, most direct tool to solve it.
+          </p>
+          <p className="muted">
+            This approach is grounded in process engineering and finance transformation work at companies like <strong>Booking.com</strong>, <strong>Rituals</strong>, and <strong>VanMoof</strong>.
+          </p>
+        </Reveal>
       </section>
 
       {/* 4. Consulting CTA */}
       <section style={{ marginBottom: "1.5rem" }}>
-        <ConsultCTA />
+        <Reveal>
+          <ConsultCTA />
+        </Reveal>
       </section>
     </div>
   );

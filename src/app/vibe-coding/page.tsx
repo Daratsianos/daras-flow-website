@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Vibe Coding",
@@ -21,6 +22,7 @@ export default function VibeCodingPage() {
 
       <section className="sections">
         {/* Section 1: What this means */}
+        <Reveal>
         <div>
           <h2>What this means</h2>
           <p>
@@ -32,8 +34,10 @@ export default function VibeCodingPage() {
             It is a highly pragmatic approach: build something small, put it into use, test it in the real world, and improve it based on actual friction.
           </p>
         </div>
+        </Reveal>
 
         {/* Section 2: Current experiments */}
+        <Reveal>
         <div>
           <h2>Current experiments</h2>
           <p>
@@ -74,8 +78,10 @@ export default function VibeCodingPage() {
             </div>
           </div>
         </div>
+        </Reveal>
 
         {/* Section 3: Principles */}
+        <Reveal>
         <div>
           <h2>My Principles</h2>
           <div className="how-we-work-list mono" style={{ marginTop: "1.25rem" }}>
@@ -111,6 +117,7 @@ export default function VibeCodingPage() {
             </div>
           </div>
         </div>
+        </Reveal>
       </section>
     </div>
   );

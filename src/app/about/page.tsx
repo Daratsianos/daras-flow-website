@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "About Panos",
@@ -14,7 +15,7 @@ export default function AboutPage() {
         <h1 className="hero-title">About Panos</h1>
       </section>
 
-      <div className="profile-container">
+      <div className="profile-container enter enter-2">
         <div className="profile-photo-wrapper">
           <Image
             src="/panos.png"
@@ -57,7 +58,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="experience-strip">
+      <div className="experience-strip enter enter-3">
         <span className="experience-label">Currently at</span>
         <span className="experience-companies">Rituals</span>
         <span className="experience-companies" style={{ color: "var(--text-light)", margin: "0 0.25rem" }}>|</span>
@@ -67,6 +68,7 @@ export default function AboutPage() {
         </span>
       </div>
 
+      <Reveal>
       <section className="prose">
         <p className="prose-lead">
           I believe work should be simpler, faster, and less of a headache. My goal is that after I step in, people can say: &ldquo;Things became predictable. Maybe even boring, in the best way.&rdquo;
@@ -92,6 +94,7 @@ export default function AboutPage() {
           <strong>Daras Flow</strong> is my independent software studio. It is where I build small, practical applications and run experiments using AI-assisted development. I focus entirely on usefulness, creating lightweight digital tools that solve specific, annoying everyday problems.
         </p>
       </section>
+      </Reveal>
     </div>
   );
 }

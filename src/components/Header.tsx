@@ -30,8 +30,12 @@ export default function Header() {
             alt="Daras Flow Logo"
             width={120}
             height={40}
+            className="logo-img"
             style={{ width: "auto", height: "32px", objectFit: "contain" }}
             priority
+            // The optimizer's webp output flattens the logo's transparency
+            // onto white, which breaks the dark-mode invert filter.
+            unoptimized
           />
         </Link>
         <nav className="nav">

@@ -59,6 +59,9 @@ html {
 
 body {
   min-height: 100%;
+  /* clip (not hidden) so the viewport-wide hero aurora can't cause horizontal
+     scroll while position: sticky on the header keeps working */
+  overflow-x: clip;
   background-color: var(--bg-color);
   background-attachment: fixed;
   background-image: 
@@ -999,5 +1002,281 @@ a:hover {
 .btn-sm {
   padding: 0.4rem 1rem;
   font-size: 0.85rem;
+}
+
+/* =========================================================
+   Motion & decorative layer
+   (entrance animations, scroll reveals, hero aurora,
+   flow-line motif, microinteractions)
+   ========================================================= */
+
+/* ---- Dark-mode logo fix: the navy PNG disappears on the dark header ---- */
+@media (prefers-color-scheme: dark) {
+  .logo-img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+/* ---- Entrance stagger (time-based, runs on every page load) ---- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-title,
+.hero-subtitle {
+  animation: fade-up 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.hero-title {
+  animation-delay: 0.05s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.16s;
+}
+
+.hero .cta-group {
+  animation: fade-up 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  animation-delay: 0.27s;
+}
+
+/* Generic entrance helpers for above-the-fold blocks (e.g. about page) */
+.enter {
+  animation: fade-up 0.65s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.enter-2 {
+  animation-delay: 0.14s;
+}
+
+.enter-3 {
+  animation-delay: 0.26s;
+}
+
+/* ---- Scroll reveal (below-the-fold blocks, via Reveal component) ----
+   Hidden state only applies when JS is present (html.js set inline in
+   layout.tsx), so content stays visible without JavaScript. */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---- Hero aurora background ---- */
+.hero {
+  position: relative;
+}
+
+.hero-aurora {
+  position: absolute;
+  top: -8rem;
+  bottom: -4rem;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hero-aurora span {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.6;
+  will-change: transform;
+}
+
+.hero-aurora span:nth-child(1) {
+  width: 480px;
+  height: 480px;
+  left: 6%;
+  top: -140px;
+  background: radial-gradient(circle, rgba(var(--primary-green-rgb), 0.28), transparent 70%);
+  animation: aurora-drift-1 26s ease-in-out infinite alternate;
+}
+
+.hero-aurora span:nth-child(2) {
+  width: 560px;
+  height: 560px;
+  right: 2%;
+  top: -80px;
+  background: radial-gradient(circle, rgba(var(--primary-blue-rgb), 0.26), transparent 70%);
+  animation: aurora-drift-2 32s ease-in-out infinite alternate;
+}
+
+.hero-aurora span:nth-child(3) {
+  width: 380px;
+  height: 380px;
+  left: 40%;
+  bottom: -160px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.18), transparent 70%);
+  animation: aurora-drift-3 22s ease-in-out infinite alternate;
+}
+
+@media (prefers-color-scheme: dark) {
+  .hero-aurora span:nth-child(1) {
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.16), transparent 70%);
+  }
+  .hero-aurora span:nth-child(2) {
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.13), transparent 70%);
+  }
+  .hero-aurora span:nth-child(3) {
+    background: radial-gradient(circle, rgba(52, 211, 153, 0.1), transparent 70%);
+  }
+}
+
+@keyframes aurora-drift-1 {
+  from {
+    transform: translate(-40px, -20px) scale(0.95);
+  }
+  to {
+    transform: translate(80px, 50px) scale(1.1);
+  }
+}
+
+@keyframes aurora-drift-2 {
+  from {
+    transform: translate(30px, 40px) scale(1.05);
+  }
+  to {
+    transform: translate(-90px, -30px) scale(0.9);
+  }
+}
+
+@keyframes aurora-drift-3 {
+  from {
+    transform: translate(-30px, 30px) scale(1);
+  }
+  to {
+    transform: translate(60px, -50px) scale(1.15);
+  }
+}
+
+/* ---- Flow-line motif ---- */
+.flow-line {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.flow-line-hero {
+  max-width: 540px;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.flow-line-divider {
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+.flow-stop-a {
+  stop-color: var(--primary-blue);
+}
+
+.flow-stop-b {
+  stop-color: var(--primary-green);
+}
+
+@media (prefers-color-scheme: dark) {
+  .flow-stop-a {
+    stop-color: #38bdf8;
+  }
+  .flow-stop-b {
+    stop-color: #34d399;
+  }
+}
+
+/* Draw-in animation (paths are normalized with pathLength=1).
+   Fully drawn by default; only hidden/animated when JS is present. */
+.flow-line path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+}
+
+@keyframes flow-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+html.js .flow-line-hero path {
+  stroke-dashoffset: 1;
+  animation: flow-draw 1.6s 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+html.js .reveal .flow-line-divider path {
+  stroke-dashoffset: 1;
+}
+
+html.js .reveal.is-visible .flow-line-divider path {
+  animation: flow-draw 1.4s 0.2s ease-out forwards;
+}
+
+/* ---- Microinteractions ---- */
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0.8rem;
+  right: 0.8rem;
+  bottom: 1px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: var(--primary-green);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-fast);
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .nav-link::after {
+    background-color: #34d399;
+  }
+}
+
+/* ---- Reduced motion: show everything, animate nothing ---- */
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-subtitle,
+  .hero .cta-group,
+  .enter,
+  .hero-aurora span,
+  html.js .flow-line-hero path,
+  html.js .reveal.is-visible .flow-line-divider path {
+    animation: none !important;
+  }
+
+  html.js .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .flow-line path,
+  html.js .flow-line-hero path,
+  html.js .reveal .flow-line-divider path {
+    stroke-dashoffset: 0 !important;
+  }
 }
 

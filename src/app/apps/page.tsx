@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import PareGalaCard from "@/components/PareGalaCard";
 import HonestCalCard from "@/components/HonestCalCard";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Apps",
@@ -21,10 +22,14 @@ export default function AppsPage() {
 
       <section className="app-grid">
         {/* App 1: Pare Gala */}
-        <PareGalaCard />
+        <Reveal>
+          <PareGalaCard />
+        </Reveal>
 
         {/* App 2: HonestCal */}
-        <HonestCalCard />
+        <Reveal delay={120}>
+          <HonestCalCard />
+        </Reveal>
       </section>
     </div>
   );
