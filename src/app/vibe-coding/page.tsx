@@ -79,6 +79,16 @@ export default function VibeCodingPage() {
               <p className="card-desc-sm">
                 A calorie estimation utility powered by LLMs, inspired by my personal experience of losing 30 kilos and keeping it off for over 6 years. Built for speed and honest tracking.
               </p>
+              <div className="card-action">
+                <a
+                  href="https://honestcal.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-link"
+                >
+                  → Try the beta
+                </a>
+              </div>
             </div>
           </div>
         </div>

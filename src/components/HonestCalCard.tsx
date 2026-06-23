@@ -27,11 +27,22 @@ export default function HonestCalCard() {
         </p>
       </div>
 
-      <ul className="card-notes">
+      <ul className="card-notes" style={{ marginBottom: "1.5rem" }}>
         <li className="card-note-item">private food tracking</li>
         <li className="card-note-item">AI text/photo estimates</li>
         <li className="card-note-item">honest assumptions, no fake precision</li>
       </ul>
+
+      <div className="cta-group">
+        <a
+          href={appUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-primary"
+        >
+          Try the beta
+        </a>
+      </div>
     </div>
   );
 }
