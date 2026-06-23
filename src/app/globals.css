@@ -450,12 +450,6 @@ a:hover {
   flex-wrap: wrap;
 }
 
-.cta-note {
-  align-self: center;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-}
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1000,15 +994,16 @@ a:hover {
 }
 
 .gplay-badge-sub {
-  font-size: 0.6rem;
-  letter-spacing: 0.09em;
-  opacity: 0.85;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: #ffffff;
 }
 
 .gplay-badge-main {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   font-weight: 600;
   letter-spacing: 0.01em;
+  color: #ffffff;
 }
 
 @media (prefers-color-scheme: dark) {

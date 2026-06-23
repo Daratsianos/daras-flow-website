@@ -40,9 +40,8 @@ export default function HonestCalCard() {
           rel="noopener noreferrer"
           className="btn btn-primary"
         >
-          Try the beta
+          Free to try
         </a>
-        <span className="cta-note">Free to try</span>
       </div>
     </div>
   );

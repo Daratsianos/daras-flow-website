@@ -86,7 +86,7 @@ export default function VibeCodingPage() {
                   rel="noopener noreferrer"
                   className="card-link"
                 >
-                  → Try the beta
+                  → Free to try
                 </a>
               </div>
             </div>
