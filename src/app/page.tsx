@@ -53,8 +53,9 @@ const jsonLd = {
       "@type": "SoftwareApplication",
       name: "Pare Gala",
       applicationCategory: "LifestyleApplication",
-      operatingSystem: "Web",
+      operatingSystem: "Android, Web",
       url: "https://paregala.com",
+      installUrl: "https://play.google.com/store/apps/details?id=app.paregala.twa",
       description:
         "A shared, real-time grocery list app for families who want one simple place to manage shopping.",
       publisher: { "@id": "https://darasflow.com/#organization" },

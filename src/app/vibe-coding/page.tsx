@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -57,9 +56,14 @@ export default function VibeCodingPage() {
                 A simple shared grocery list tool built to solve my family&apos;s daily Greek question: <em>&ldquo;Thes gala?&rdquo;</em> (Do you want milk?). Instantly synced list.
               </p>
               <div className="card-action">
-                <Link href="/apps" className="card-link">
-                  → View QR Code & Share Flow
-                </Link>
+                <a
+                  href="https://play.google.com/store/apps/details?id=app.paregala.twa"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-link"
+                >
+                  → Get it on Google Play
+                </a>
               </div>
             </div>
 

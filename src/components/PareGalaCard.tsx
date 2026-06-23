@@ -1,22 +1,9 @@
-"use client";
-
-import { useState } from "react";
-import { QRCodeSVG } from "qrcode.react";
+import GooglePlayBadge from "@/components/GooglePlayBadge";
 
 export default function PareGalaCard() {
-  const [showQR, setShowQR] = useState(false);
-  const [copied, setCopied] = useState(false);
   const appUrl = "https://paregala.com";
-
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(appUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy link:", err);
-    }
-  };
+  const playStoreUrl =
+    "https://play.google.com/store/apps/details?id=app.paregala.twa";
 
   return (
     <div className="card flush">
@@ -26,7 +13,7 @@ export default function PareGalaCard() {
             Pare Gala (Our Groceries)
           </a>
         </h2>
-        <span className="status-badge beta">Active PWA</span>
+        <span className="status-badge beta">On Google Play</span>
       </div>
 
       <p className="app-tagline">
@@ -47,94 +34,20 @@ export default function PareGalaCard() {
       <ul className="card-notes" style={{ marginBottom: "1.5rem" }}>
         <li className="card-note-item">mobile-first design</li>
         <li className="card-note-item">simple shared lists</li>
-        <li className="card-note-item">PWA</li>
+        <li className="card-note-item">Android &amp; web (PWA)</li>
       </ul>
 
       <div className="cta-group">
+        <GooglePlayBadge href={playStoreUrl} appName="Pare Gala" />
         <a
           href={appUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-primary"
-        >
-          Open App
-        </a>
-        <button
-          type="button"
-          onClick={() => setShowQR(!showQR)}
           className="btn btn-secondary"
-          style={{ gap: "0.5rem" }}
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <rect width="5" height="5" x="3" y="3" rx="1" />
-            <rect width="5" height="5" x="16" y="3" rx="1" />
-            <rect width="5" height="5" x="3" y="16" rx="1" />
-            <path d="M21 16V21H16" />
-            <path d="M21 16H16" />
-            <path d="M16 21V16" />
-            <path d="M9 9h.01" />
-            <path d="M9 15h.01" />
-            <path d="M15 9h.01" />
-            <path d="M15 15h.01" />
-          </svg>
-          {showQR ? "Hide QR Code" : "Show QR Code"}
-        </button>
+          Open in browser
+        </a>
       </div>
-
-      {showQR && (
-        <div className="qr-panel">
-          <div className="qr-frame">
-            <QRCodeSVG
-              value={appUrl}
-              size={160}
-              level="M"
-              includeMargin={true}
-              style={{ display: "block" }}
-            />
-          </div>
-          <p className="qr-caption">Scan to open this shopping list.</p>
-          <div className="qr-actions">
-            <button
-              type="button"
-              onClick={handleCopy}
-              className="btn btn-secondary btn-sm"
-              style={{ gap: "0.25rem" }}
-            >
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
-                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
-              </svg>
-              {copied ? "Copied!" : "Copy Link"}
-            </button>
-            <button
-              type="button"
-              onClick={() => setShowQR(false)}
-              className="btn btn-secondary btn-sm"
-              style={{ color: "var(--text-muted)" }}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
