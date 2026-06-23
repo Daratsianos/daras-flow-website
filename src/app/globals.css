@@ -450,6 +450,12 @@ a:hover {
   flex-wrap: wrap;
 }
 
+.cta-note {
+  align-self: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;

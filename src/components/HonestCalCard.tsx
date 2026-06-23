@@ -42,6 +42,9 @@ export default function HonestCalCard() {
         >
           Try the beta
         </a>
+        <span className="cta-note">
+          Free to try — paid limits after a few photos
+        </span>
       </div>
     </div>
   );
