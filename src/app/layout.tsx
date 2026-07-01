@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     "Software Studio",
     "Pare Gala",
     "HonestCal",
+    "Chroma",
     "Process Optimization",
     "Finance Transformation",
   ],

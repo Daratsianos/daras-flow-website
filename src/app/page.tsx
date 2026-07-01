@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import PareGalaCard from "@/components/PareGalaCard";
 import HonestCalCard from "@/components/HonestCalCard";
+import ChromaCard from "@/components/ChromaCard";
 import ConsultCTA from "@/components/ConsultCTA";
 import Reveal from "@/components/Reveal";
 import FlowLine from "@/components/FlowLine";
@@ -9,7 +10,7 @@ import FlowLine from "@/components/FlowLine";
 export const metadata: Metadata = {
   title: "Daras Flow | Practical Apps & Workflow Tools",
   description:
-    "Daras Flow builds simple, lightweight digital tools and workflow automations to reduce everyday friction. Discover our apps Pare Gala and HonestCal.",
+    "Daras Flow builds simple, lightweight digital tools and workflow automations to reduce everyday friction. Discover our apps Pare Gala, HonestCal and Chroma.",
   alternates: {
     canonical: "/",
   },
@@ -70,6 +71,16 @@ const jsonLd = {
         "AI-assisted calorie logging for real meals, with review before logging and no fake precision.",
       publisher: { "@id": "https://darasflow.com/#organization" },
     },
+    {
+      "@type": "SoftwareApplication",
+      name: "Chroma",
+      applicationCategory: "GameApplication",
+      operatingSystem: "Web",
+      url: "https://chroma-game-beta.vercel.app",
+      description:
+        "A relaxing paint-by-number colouring game that can turn your own family photos into colouring pages.",
+      publisher: { "@id": "https://darasflow.com/#organization" },
+    },
   ],
 };
 
@@ -118,6 +129,9 @@ export default function Home() {
           </Reveal>
           <Reveal delay={120}>
             <HonestCalCard />
+          </Reveal>
+          <Reveal delay={240}>
+            <ChromaCard />
           </Reveal>
         </div>
       </section>

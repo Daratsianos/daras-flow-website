@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import PareGalaCard from "@/components/PareGalaCard";
 import HonestCalCard from "@/components/HonestCalCard";
+import ChromaCard from "@/components/ChromaCard";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Apps",
   description:
-    "Explore the simple digital tools and mobile apps developed by Daras Flow, including Pare Gala and HonestCal.",
+    "Explore the simple digital tools and mobile apps developed by Daras Flow, including Pare Gala, HonestCal and Chroma.",
 };
 
 export default function AppsPage() {
@@ -29,6 +30,11 @@ export default function AppsPage() {
         {/* App 2: HonestCal */}
         <Reveal delay={120}>
           <HonestCalCard />
+        </Reveal>
+
+        {/* App 3: Chroma */}
+        <Reveal delay={240}>
+          <ChromaCard />
         </Reveal>
       </section>
     </div>
