@@ -64,7 +64,7 @@ export default function ConsultCTA() {
       ) : status === "success" ? (
         <div className="contact-success">
           <p>
-            <strong>Thanks — your message is on its way.</strong>{" "}I&apos;ll get back to you by email soon.
+            <strong>Thanks, your message is on its way.</strong>{" "}I&apos;ll get back to you by email soon.
           </p>
           <button
             type="button"
@@ -134,7 +134,7 @@ export default function ConsultCTA() {
           {status === "error" ? (
             <p className="contact-status is-error">{error}</p>
           ) : (
-            <p className="contact-hint">Sent straight to my inbox — I&apos;ll reply by email.</p>
+            <p className="contact-hint">Sent straight to my inbox. I&apos;ll reply by email.</p>
           )}
         </form>
       )}

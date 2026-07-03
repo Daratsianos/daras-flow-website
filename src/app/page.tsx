@@ -102,7 +102,7 @@ export default function Home() {
           Daras Flow builds practical apps and workflow tools that reduce friction.
         </h1>
         <p className="hero-subtitle">
-          Lightweight, single-purpose tools that make everyday operations less clunky — built by Panos Daratsianos.
+          Lightweight, single-purpose tools that make everyday operations less clunky. Built by Panos Daratsianos.
         </p>
         <FlowLine variant="hero" />
 
@@ -141,7 +141,7 @@ export default function Home() {
           <FlowLine />
           <h2>The Artisan Mindset</h2>
           <p className="lead">
-            I own the entire lifecycle of every app I build and take full responsibility for the result — no compromised or bloated products.
+            I own the entire lifecycle of every app I build and take full responsibility for the result. No compromised or bloated products.
             I map how people actually work, find where the friction is, and build the smallest tool that solves it.
           </p>
           <p className="muted">

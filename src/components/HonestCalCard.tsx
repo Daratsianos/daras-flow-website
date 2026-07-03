@@ -17,13 +17,13 @@ export default function HonestCalCard() {
       </p>
 
       <p className="app-desc">
-        Most calorie apps demand fake precision&mdash;searching databases for exact brands, weighing every gram.
+        Most calorie apps demand fake precision: searching databases for exact brands, weighing every gram.
         HonestCal uses AI to estimate calories from a description or photo, so you can log in seconds.
       </p>
 
       <div className="story story-green">
         <p>
-          <strong>The Story:</strong>{" "}I lost 30 kilos and kept it off for over 6 years&mdash;consistency matters more than fake database precision. I built HonestCal because I couldn&apos;t find an accurate, bloat-free calorie app: it estimates your meal with AI, shows what it assumed you ate, and lets you review and adjust before logging.
+          <strong>The Story:</strong>{" "}I lost 30 kilos and kept it off for over 6 years. Consistency matters more than fake database precision. I built HonestCal because I couldn&apos;t find an accurate, bloat-free calorie app: it estimates your meal with AI, shows what it assumed you ate, and lets you review and adjust before logging.
         </p>
       </div>
 

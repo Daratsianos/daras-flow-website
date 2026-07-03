@@ -25,7 +25,7 @@ export default function VibeCodingPage() {
         <div>
           <h2>What this means</h2>
           <p>
-            This isn&apos;t polished startup theatre — no pitch deck, no planning cycles, no committee.
+            This isn&apos;t polished startup theatre. No pitch deck, no planning cycles, no committee.
             I see a bottleneck, pair program with AI to write the code, and ship a working prototype fast.
           </p>
           <p>

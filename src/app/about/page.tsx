@@ -79,15 +79,15 @@ export default function AboutPage() {
         </p>
 
         <p>
-          This keeps me free from corporate politics — I rely directly on the market for my work. My approach stays scientific: measure, test, learn, improve.
+          This keeps me free from corporate politics. I rely directly on the market for my work, and my approach stays scientific: measure, test, learn, improve.
         </p>
 
         <p>
-          My career spans finance operations, ERP workflows, process improvement, and automation&mdash;hands-on roles inside fast-moving product, finance, and operations teams.
+          My career spans hands-on roles in finance operations, ERP workflows, process improvement, and automation, inside fast-moving product, finance, and operations teams.
         </p>
 
         <p>
-          For clients, that means efficiency and growth without unnecessary complexity — impact over titles. Work should add to life, not take from it.
+          For clients, that means efficiency and growth without unnecessary complexity. Impact over titles. Work should add to life, not take from it.
         </p>
 
         <p>

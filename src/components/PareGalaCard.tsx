@@ -27,7 +27,7 @@ export default function PareGalaCard() {
 
       <div className="story story-blue">
         <p>
-          <strong>The Story:</strong> I built this app to solve a classic Greek household emergency: the last-minute shout from home, <em>&ldquo;Pare gala!&rdquo;</em>{" "}(&ldquo;Get milk!&rdquo;)&mdash;that&apos;s where the name comes from. I wanted a simple tool that syncs family shopping lists instantly, so no one ever forgets the milk.
+          <strong>The Story:</strong> I built this app to solve a classic Greek household emergency: the last-minute shout from home, <em>&ldquo;Pare gala!&rdquo;</em>{" "}(&ldquo;Get milk!&rdquo;). That&apos;s where the name comes from. I wanted a simple tool that syncs family shopping lists instantly, so no one ever forgets the milk.
         </p>
       </div>
 
