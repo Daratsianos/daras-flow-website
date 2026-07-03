@@ -25,12 +25,11 @@ export default function VibeCodingPage() {
         <div>
           <h2>What this means</h2>
           <p>
-            This is not polished startup theatre. There is no pitch deck, no endless planning cycles, and no corporate committee.
-            Vibe coding is about moving directly from an observation or irritation to a working solution.
-            I see a workflow bottleneck or an everyday hassle, pair program with AI to write the code, and launch a working prototype as quickly as possible.
+            This isn&apos;t polished startup theatre — no pitch deck, no planning cycles, no committee.
+            I see a bottleneck, pair program with AI to write the code, and ship a working prototype fast.
           </p>
           <p>
-            It is a highly pragmatic approach: build something small, put it into use, test it in the real world, and improve it based on actual friction.
+            It&apos;s pragmatic: build something small, put it into use, test it in the real world, and improve it based on actual friction.
           </p>
         </div>
         </Reveal>

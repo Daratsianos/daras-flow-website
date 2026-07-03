@@ -21,13 +21,13 @@ export default function PareGalaCard() {
       </p>
 
       <p className="app-desc">
-        Shopping lists get messy when multiple people edit them, or when you are in the store with poor internet connection.
-        Pare Gala focuses on solving these edge cases by providing an ultra-fast, real-time shared list.
+        Shopping lists get messy with multiple editors and spotty store wifi.
+        Pare Gala fixes that with an ultra-fast, real-time shared list.
       </p>
 
       <div className="story story-blue">
         <p>
-          <strong>The Story:</strong> I built this app to solve a classic Greek household emergency: standing at the supermarket checkout and getting that last-minute shout from home, <em>&ldquo;Pare gala!&rdquo;</em>{" "}(&ldquo;Get milk!&rdquo;). That running joke, and the frustration of forgetting the most essential item, is where the name comes from. I wanted a simple tool that syncs family shopping lists instantly, so no one ever forgets the milk.
+          <strong>The Story:</strong> I built this app to solve a classic Greek household emergency: the last-minute shout from home, <em>&ldquo;Pare gala!&rdquo;</em>{" "}(&ldquo;Get milk!&rdquo;)&mdash;that&apos;s where the name comes from. I wanted a simple tool that syncs family shopping lists instantly, so no one ever forgets the milk.
         </p>
       </div>
 

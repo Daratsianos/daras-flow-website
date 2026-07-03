@@ -16,7 +16,7 @@ export default function AppsPage() {
       <section className="page-header">
         <h1 className="hero-title">The Apps</h1>
         <p className="hero-subtitle">
-          I focus on building lightweight, single-purpose applications that solve practical everyday problems.
+          Lightweight, single-purpose apps that solve practical everyday problems.
           No complex interfaces, no data bloat.
         </p>
       </section>

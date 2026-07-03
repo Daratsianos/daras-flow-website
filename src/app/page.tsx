@@ -102,8 +102,7 @@ export default function Home() {
           Daras Flow builds practical apps and workflow tools that reduce friction.
         </h1>
         <p className="hero-subtitle">
-          Lightweight, single-purpose digital tools designed to make everyday operations and daily life less clunky.
-          Built with an optimization mindset by Panos Daratsianos.
+          Lightweight, single-purpose tools that make everyday operations less clunky — built by Panos Daratsianos.
         </p>
         <FlowLine variant="hero" />
 
@@ -142,9 +141,8 @@ export default function Home() {
           <FlowLine />
           <h2>The Artisan Mindset</h2>
           <p className="lead">
-            Every app is built with what Nassim Nicholas Taleb calls having <strong>&ldquo;Soul in the Game.&rdquo;</strong>{" "}
-            As an artisan, I oversee the entire lifecycle of what I build, taking personal responsibility for the final utility.
-            This means refusing to ship compromised, defective, or bloated products. I map how people actually work, identify where the friction occurs, and build the smallest, most direct tool to solve it.
+            I own the entire lifecycle of every app I build and take full responsibility for the result — no compromised or bloated products.
+            I map how people actually work, find where the friction is, and build the smallest tool that solves it.
           </p>
           <p className="muted">
             This approach is grounded in process engineering and finance transformation work at companies like <strong>Booking.com</strong>, <strong>Rituals</strong>, and <strong>VanMoof</strong>.

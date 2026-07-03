@@ -71,27 +71,27 @@ export default function AboutPage() {
       <Reveal>
       <section className="prose">
         <p className="prose-lead">
-          I believe work should be simpler, faster, and less of a headache. My goal is that after I step in, people can say: &ldquo;Things became predictable. Maybe even boring, in the best way.&rdquo;
+          I believe work should be simpler and less of a headache. My goal is that after I step in, people can say: &ldquo;Things became predictable. Maybe even boring, in the best way.&rdquo;
         </p>
 
         <p>
-          I call myself a <strong>process optimization artisan</strong>. Inspired by Nassim Nicholas Taleb&apos;s philosophy in <em>Skin in the Game</em>, I believe the artisan model is the truest way to build software and systems. It is about having <strong>&ldquo;Soul in the Game&rdquo;</strong>—taking existential and personal pride in my labor, refusing to build compromised or bloated products, and overseeing the entire lifecycle of what I create.
+          I call myself a <strong>process optimization artisan</strong>. I take personal pride in my work, refuse to build compromised or bloated products, and own the entire lifecycle of what I create.
         </p>
 
         <p>
-          For me, this preserves my freedom, integrity, and antifragility. It allows me to rely directly on the market for my work, remaining free from corporate politics and bureaucratic layers. My optimization approach is grounded in scientific thinking: measure, test, learn, improve.
-        </p>
-        
-        <p>
-          Over my career, I have worked across finance operations, ERP workflows, process improvement, automation, and cross-functional projects&mdash;hands-on roles inside fast-moving product, finance, and operations teams.
+          This keeps me free from corporate politics — I rely directly on the market for my work. My approach stays scientific: measure, test, learn, improve.
         </p>
 
         <p>
-          For my clients and partners, this translates to efficiency, structure, and growth without unnecessary complexity. I bring curiosity, honesty, and a focus on impact over titles. Work should add to life—for you, your team, and your customers.
+          My career spans finance operations, ERP workflows, process improvement, and automation&mdash;hands-on roles inside fast-moving product, finance, and operations teams.
         </p>
 
         <p>
-          <strong>Daras Flow</strong> is my independent software studio. It is where I build small, practical applications and run experiments using AI-assisted development. I focus entirely on usefulness, creating lightweight digital tools that solve specific, annoying everyday problems.
+          For clients, that means efficiency and growth without unnecessary complexity — impact over titles. Work should add to life, not take from it.
+        </p>
+
+        <p>
+          <strong>Daras Flow</strong> is my independent software studio, where I build small, practical apps and run experiments using AI-assisted development. I focus entirely on usefulness: lightweight tools that solve specific, annoying everyday problems.
         </p>
       </section>
       </Reveal>

@@ -53,8 +53,8 @@ export default function ConsultCTA() {
     <div className="consult">
       <h3>Workflow Consulting</h3>
       <p>
-        I occasionally take on selected workflow automation and process simplification projects for businesses.
-        If you have a messy operational problem that needs a lightweight, custom tool or system integration, let&apos;s talk.
+        I occasionally take on select workflow automation projects for businesses.
+        If you have a messy operational problem that needs a lightweight, custom fix, let&apos;s talk.
       </p>
 
       {!open ? (

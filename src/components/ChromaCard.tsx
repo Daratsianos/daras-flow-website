@@ -18,12 +18,12 @@ export default function ChromaCard() {
 
       <p className="app-desc">
         Chroma is classic paint-by-number: pick a colour, fill the matching cells, and watch the picture come to life.
-        The twist is that it also converts your own photos into colouring pages, so kids can colour the people they love.
+        The twist: it also converts your own photos into colouring pages, so kids can colour the people they love.
       </p>
 
       <div className="story story-purple">
         <p>
-          <strong>The Story:</strong>{" "}My daughter was hooked on a paint-by-number game, so I set out to rebuild it myself. Once the core game worked, I added the one feature the original never had: turning our own family photos into colouring pages. Watching her colour a picture of the people she loves is the best product review I have ever received.
+          <strong>The Story:</strong>{" "}My daughter was hooked on a paint-by-number game, so I rebuilt it myself&mdash;then added the one feature the original never had: turning our own family photos into colouring pages. Watching her colour a picture of the people she loves is the best product review I have ever received.
         </p>
       </div>
 
