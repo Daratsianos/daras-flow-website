@@ -972,53 +972,52 @@ a:hover {
 }
 
 /* ---- Google Play badge (app cards) ---- */
+.app-store-actions {
+  align-items: center;
+}
+
 .gplay-badge {
   display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 1.1rem;
-  background-color: #000000;
-  color: #ffffff;
-  border: 1px solid #000000;
-  border-radius: 10px;
-  line-height: 1;
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  flex: 0 0 auto;
+  margin: -14px;
+  border-radius: 12px;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
 }
 
 .gplay-badge:hover {
+  filter: brightness(1.08);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
   text-decoration: none;
-  color: #ffffff;
 }
 
-.gplay-badge-icon {
-  flex-shrink: 0;
+.gplay-badge:focus-visible {
+  outline: 3px solid var(--primary-accent-color);
+  outline-offset: -12px;
 }
 
-.gplay-badge-text {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+.gplay-badge-image {
+  display: block;
+  width: 232px;
+  height: auto;
 }
 
-.gplay-badge-sub {
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  color: #ffffff;
+.gplay-badge--compact {
+  margin: -11px;
+  border-radius: 9px;
 }
 
-.gplay-badge-main {
-  font-size: 1.2rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  color: #ffffff;
+.gplay-badge--compact:focus-visible {
+  outline-offset: -9px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .gplay-badge {
-    border-color: rgba(255, 255, 255, 0.2);
-  }
+.gplay-badge-image--compact {
+  width: 180px;
+}
+
+.app-store-actions .app-browser-link {
+  min-width: 190px;
+  min-height: 58px;
+  font-size: 1rem;
 }
 
 .btn-sm {
@@ -1365,4 +1364,3 @@ html.js .reveal.is-visible .flow-line-divider .flow-chevron-b {
     opacity: 1 !important;
   }
 }
-

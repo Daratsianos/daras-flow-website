@@ -13,7 +13,7 @@ export default function PareGalaCard() {
             Pare Gala (Our Groceries)
           </a>
         </h2>
-        <span className="status-badge beta">On Google Play</span>
+        <span className="status-badge beta">Android app</span>
       </div>
 
       <p className="app-tagline">
@@ -37,13 +37,13 @@ export default function PareGalaCard() {
         <li className="card-note-item">Android &amp; web (PWA)</li>
       </ul>
 
-      <div className="cta-group">
+      <div className="cta-group app-store-actions">
         <GooglePlayBadge href={playStoreUrl} appName="Pare Gala" />
         <a
           href={appUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-secondary"
+          className="btn btn-secondary app-browser-link"
         >
           Open in browser
         </a>

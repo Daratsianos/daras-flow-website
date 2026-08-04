@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import GooglePlayBadge from "@/components/GooglePlayBadge";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -55,14 +56,11 @@ export default function VibeCodingPage() {
                 A simple shared grocery list tool built to solve my family&apos;s daily Greek question: <em>&ldquo;Thes gala?&rdquo;</em> (Do you want milk?). Instantly synced list.
               </p>
               <div className="card-action">
-                <a
+                <GooglePlayBadge
                   href="https://play.google.com/store/apps/details?id=app.paregala.twa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-link"
-                >
-                  → Get it on Google Play
-                </a>
+                  appName="Pare Gala"
+                  compact
+                />
               </div>
             </div>
 
@@ -73,20 +71,17 @@ export default function VibeCodingPage() {
                     HonestCal
                   </a>
                 </h3>
-                <span className="status-badge beta">Beta</span>
+                <span className="status-badge beta">Android app</span>
               </div>
               <p className="card-desc-sm">
-                A calorie estimation utility powered by LLMs, inspired by my personal experience of losing 30 kilos and keeping it off for over 6 years. Built for speed and honest tracking.
+                Snap, type, or scan a meal for fast AI calorie and macro estimates—with confidence levels instead of fake precision.
               </p>
               <div className="card-action">
-                <a
-                  href="https://honestcal.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="card-link"
-                >
-                  → Free to try
-                </a>
+                <GooglePlayBadge
+                  href="https://play.google.com/store/apps/details?id=com.honestcal.app"
+                  appName="HonestCal"
+                  compact
+                />
               </div>
             </div>
 

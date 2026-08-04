@@ -65,10 +65,12 @@ const jsonLd = {
       "@type": "SoftwareApplication",
       name: "HonestCal",
       applicationCategory: "HealthApplication",
-      operatingSystem: "Web",
+      operatingSystem: ["Web", "Android"],
       url: "https://honestcal.com",
+      installUrl:
+        "https://play.google.com/store/apps/details?id=com.honestcal.app",
       description:
-        "AI-assisted calorie logging for real meals, with review before logging and no fake precision.",
+        "AI calorie and macro tracking from meal photos, descriptions, and barcodes, with confidence levels instead of fake precision.",
       publisher: { "@id": "https://darasflow.com/#organization" },
     },
     {

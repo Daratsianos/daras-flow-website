@@ -44,14 +44,17 @@ src/
     globals.css          # design system + component styles
   components/
     Header.tsx
-    PareGalaCard.tsx     # "Pare Gala" grocery app card (with QR share)
+    GooglePlayBadge.tsx  # shared official Google Play store badge
+    PareGalaCard.tsx     # "Pare Gala" grocery app card
     HonestCalCard.tsx    # "HonestCal" calorie app card
+    ChromaCard.tsx       # "Chroma" paint-by-number beta card
 ```
 
 ## Featured apps
 
-- **Pare Gala** — shared real-time grocery list ([paregala.com](https://paregala.com))
-- **HonestCal** — AI-assisted calorie logging ([honestcal.com](https://honestcal.com))
+- **Pare Gala** — shared real-time grocery list ([website](https://paregala.com), [Get it on Google Play](https://play.google.com/store/apps/details?id=app.paregala.twa))
+- **HonestCal** — AI-assisted calorie and macro tracking ([website](https://honestcal.com), [Get it on Google Play](https://play.google.com/store/apps/details?id=com.honestcal.app))
+- **Chroma** — paint-by-number game ([Try the beta](https://chroma-game-beta.vercel.app))
 
 ## Deployment
 
