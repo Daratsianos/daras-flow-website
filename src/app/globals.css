@@ -2,10 +2,12 @@
   --primary-blue: #0f2f59;
   --primary-green: #1e7c65;
   --primary-purple: #5b3a8e;
+  --primary-sky: #0284c7;
   --primary-blue-rgb: 15, 47, 89;
   --primary-green-rgb: 30, 124, 101;
   --accent-green-light: rgba(30, 124, 101, 0.04);
   --accent-purple-light: rgba(91, 58, 142, 0.04);
+  --accent-sky-light: rgba(2, 132, 199, 0.04);
 
   --bg-color: #fafbfc;
   --card-bg: #ffffff;
@@ -39,7 +41,9 @@
     --border-color: #1e293b;
     --accent-green-light: rgba(52, 211, 153, 0.08);
     --accent-purple-light: rgba(167, 139, 250, 0.08);
+    --accent-sky-light: rgba(56, 189, 248, 0.08);
     --primary-purple: #a78bfa;
+    --primary-sky: #38bdf8;
     --primary-accent-color: #34d399;
 
     --header-bg: #111823;
@@ -701,6 +705,11 @@ a:hover {
 .story-purple {
   background-color: var(--accent-purple-light);
   border-left: 3px solid var(--primary-purple);
+}
+
+.story-sky {
+  background-color: var(--accent-sky-light);
+  border-left: 3px solid var(--primary-sky);
 }
 
 /* ---- Long-form prose blocks (about, vibe-coding, privacy) ---- */

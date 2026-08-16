@@ -46,7 +46,7 @@ export default function PrivacyPage() {
         <div>
           <h2 className="subheading">4. App-Specific Privacy</h2>
           <p>
-            Specific details regarding the data storage and transmission of individual apps (like <em>Pare Gala</em>, <em>HonestCal</em> or <em>Chroma</em>) will be detailed inside those respective applications or expanded on this page as they transition from development to public release.
+            Specific details regarding the data storage and transmission of individual apps (like <em>Card Sorter</em>, <em>Pare Gala</em>, <em>HonestCal</em> or <em>Chroma</em>) will be detailed inside those respective applications or expanded on this page as they transition from development to public release.
           </p>
         </div>
 

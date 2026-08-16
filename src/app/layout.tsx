@@ -27,6 +27,7 @@ export const metadata: Metadata = {
     "Panos Daratsianos",
     "Workflow Automation",
     "Software Studio",
+    "Card Sorter",
     "Pare Gala",
     "HonestCal",
     "Chroma",

@@ -46,6 +46,30 @@ export default function VibeCodingPage() {
             <div className="card card-compact">
               <div className="card-title-group">
                 <h3 className="card-title-sm">
+                  <a href="https://card-sorter-one.vercel.app" target="_blank" rel="noopener noreferrer" className="app-link">
+                    Card Sorter
+                  </a>
+                </h3>
+                <span className="status-badge beta">Beta</span>
+              </div>
+              <p className="card-desc-sm">
+                Built for a freelancer who was spending days sorting business credit-card transactions by hand. It learns from his corrections and produces bookkeeping-ready data.
+              </p>
+              <div className="card-action">
+                <a
+                  href="https://card-sorter-one.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card-link"
+                >
+                  → Try Card Sorter
+                </a>
+              </div>
+            </div>
+
+            <div className="card card-compact">
+              <div className="card-title-group">
+                <h3 className="card-title-sm">
                   <a href="https://paregala.com" target="_blank" rel="noopener noreferrer" className="app-link">
                     Pare Gala (Our Groceries)
                   </a>

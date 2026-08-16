@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import CardSorterCard from "@/components/CardSorterCard";
 import PareGalaCard from "@/components/PareGalaCard";
 import HonestCalCard from "@/components/HonestCalCard";
 import ChromaCard from "@/components/ChromaCard";
@@ -10,7 +11,7 @@ import FlowLine from "@/components/FlowLine";
 export const metadata: Metadata = {
   title: "Daras Flow | Practical Apps & Workflow Tools",
   description:
-    "Daras Flow builds simple, lightweight digital tools and workflow automations to reduce everyday friction. Discover our apps Pare Gala, HonestCal and Chroma.",
+    "Daras Flow builds simple, lightweight digital tools and workflow automations to reduce everyday friction. Discover our apps Card Sorter, Pare Gala, HonestCal and Chroma.",
   alternates: {
     canonical: "/",
   },
@@ -49,6 +50,16 @@ const jsonLd = {
       jobTitle: "Process Optimization Artisan & Founder",
       url: "https://darasflow.com/about",
       worksFor: { "@id": "https://darasflow.com/#organization" },
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "Card Sorter",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://card-sorter-one.vercel.app",
+      description:
+        "Turn business credit-card statements into categorized, bookkeeping-ready data.",
+      publisher: { "@id": "https://darasflow.com/#organization" },
     },
     {
       "@type": "SoftwareApplication",
@@ -126,12 +137,15 @@ export default function Home() {
         </Reveal>
         <div className="app-grid">
           <Reveal>
-            <PareGalaCard />
+            <CardSorterCard />
           </Reveal>
           <Reveal delay={120}>
-            <HonestCalCard />
+            <PareGalaCard />
           </Reveal>
           <Reveal delay={240}>
+            <HonestCalCard />
+          </Reveal>
+          <Reveal delay={360}>
             <ChromaCard />
           </Reveal>
         </div>

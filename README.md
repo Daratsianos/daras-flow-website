@@ -45,6 +45,7 @@ src/
   components/
     Header.tsx
     GooglePlayBadge.tsx  # shared official Google Play store badge
+    CardSorterCard.tsx   # "Card Sorter" statement-sorting beta card
     PareGalaCard.tsx     # "Pare Gala" grocery app card
     HonestCalCard.tsx    # "HonestCal" calorie app card
     ChromaCard.tsx       # "Chroma" paint-by-number beta card
@@ -52,6 +53,7 @@ src/
 
 ## Featured apps
 
+- **Card Sorter** — business credit-card statements into bookkeeping-ready data ([Try Card Sorter](https://card-sorter-one.vercel.app))
 - **Pare Gala** — shared real-time grocery list ([website](https://paregala.com), [Get it on Google Play](https://play.google.com/store/apps/details?id=app.paregala.twa))
 - **HonestCal** — AI-assisted calorie and macro tracking ([website](https://honestcal.com), [Get it on Google Play](https://play.google.com/store/apps/details?id=com.honestcal.app))
 - **Chroma** — paint-by-number game ([Try the beta](https://chroma-game-beta.vercel.app))
