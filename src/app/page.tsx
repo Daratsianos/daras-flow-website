@@ -74,7 +74,7 @@ const jsonLd = {
 const SITUATIONS = [
   {
     q: "Too much copying between systems.",
-    a: "Usually one import, integration or system fewer.",
+    a: "Usually the answer is one fewer manual transfer, not another system.",
   },
   {
     q: "The systems work, except for one horrible manual step.",
@@ -318,7 +318,7 @@ export default function Home() {
               width={272}
               height={272}
               className="about-photo"
-              sizes="136px"
+              sizes="152px"
             />
             <div className="about-text">
               <h2 className="section-title about-name">Panos Daratsianos</h2>

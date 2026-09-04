@@ -1189,6 +1189,13 @@ main:focus {
   color: var(--muted);
 }
 
+.compare-row.is-us {
+  margin-inline: -1rem;
+  padding: 1.35rem 1rem 1.35rem calc(1rem - 3px);
+  border-left: 3px solid var(--green);
+  background: var(--green-tint);
+}
+
 .compare-row.is-us .compare-who {
   color: var(--green-deep);
   font-weight: 500;
@@ -1235,6 +1242,11 @@ main:focus {
   .compare-row {
     grid-template-columns: 1fr;
     row-gap: 0.25rem;
+  }
+
+  .compare-row.is-us {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: calc(var(--gutter) - 3px) var(--gutter);
   }
 }
 
@@ -1350,7 +1362,7 @@ main:focus {
 /* ---- About teaser ---- */
 .about-teaser {
   display: grid;
-  grid-template-columns: 8.5rem minmax(0, 1fr);
+  grid-template-columns: 9.5rem minmax(0, 1fr);
   column-gap: 2rem;
   row-gap: 1.25rem;
   align-items: start;
@@ -1358,8 +1370,8 @@ main:focus {
 }
 
 .about-photo {
-  width: 8.5rem;
-  height: 8.5rem;
+  width: 9.5rem;
+  height: 9.5rem;
   object-fit: cover;
   object-position: center top;
   border-radius: 50%;
