@@ -286,7 +286,8 @@ button {
   display: none;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.8rem;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.9rem;
   border: 1px solid var(--ink);
   border-radius: 2px;
   background: transparent;
@@ -337,7 +338,7 @@ button {
 
 /* ---- Hero ---- */
 .hero {
-  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-top: clamp(2.25rem, 5vw, 3.75rem);
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -345,13 +346,14 @@ button {
   margin-bottom: 1.5rem;
   font-size: 0.8rem;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .hero-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
 }
 
 .hero-title {
@@ -422,14 +424,14 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem 1.5rem;
-  margin-top: 2.25rem;
+  margin-top: 2rem;
 }
 
 /* The flow drawing: a tangled workflow that resolves into a clean line
    ending in the brand chevrons. Rust = friction, ink = the flow, green = fix. */
 .flow {
   position: relative;
-  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
+  margin: clamp(1.75rem, 4vw, 2.75rem) 0 0;
   padding-top: 1.5rem;
 }
 
@@ -456,7 +458,7 @@ button {
 
 .flow-label.is-fix {
   left: 46.7%;
-  top: calc(1.5rem + 62%);
+  top: calc(1.5rem + 60%);
   transform: translateX(-50%);
   white-space: nowrap;
 }
@@ -476,7 +478,7 @@ button {
 .flow-ghost {
   fill: none;
   stroke: var(--rust);
-  stroke-opacity: 0.75;
+  stroke-opacity: 0.65;
   stroke-width: 1.75;
   stroke-linecap: round;
   stroke-dasharray: 1 6;
@@ -708,14 +710,8 @@ button {
   letter-spacing: -0.01em;
 }
 
-.step-title small {
-  display: block;
-  margin-top: 0.2rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+.step-optional {
+  font-style: italic;
   color: var(--green-deep);
 }
 
@@ -776,7 +772,7 @@ button {
 
 .evidence-figure {
   font-family: var(--font-display);
-  font-size: 1.45rem;
+  font-size: 1.2rem;
   line-height: 1;
   font-weight: 500;
 }
@@ -1023,7 +1019,6 @@ button {
 .lab-item {
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr) auto;
-  grid-template-areas: "name desc meta";
   column-gap: 1.5rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--rule);
@@ -1032,7 +1027,7 @@ button {
 
 .lab-name {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.15rem;
 }
 
 .lab-name a {

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import GooglePlayBadge from "@/components/GooglePlayBadge";
-import FlowRule from "@/components/FlowRule";
 import { labOnly } from "@/lib/apps";
 
 export const metadata: Metadata = {
@@ -26,7 +25,6 @@ export default function LabPage() {
             <br />
             because they were missing.
           </h1>
-          <FlowRule />
           <p className="page-intro">
             Side projects, each one started by a real itch of my own or of
             someone close to me. They show curiosity, product sense and that I
@@ -60,6 +58,7 @@ export default function LabPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn is-secondary"
+                    aria-label={`${app.tryLabel}: ${app.name}`}
                   >
                     {app.tryLabel}
                   </a>

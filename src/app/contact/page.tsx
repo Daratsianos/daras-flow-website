@@ -18,21 +18,21 @@ export default function ContactPage() {
         <div className="section-side">
           <p className="label is-muted">Contact</p>
           <p className="section-note">
-            Tell me where the work gets stuck. The messier, the better.
+            Small business, team or independent professional: tell me where the
+            work gets stuck. The messier, the better.
           </p>
         </div>
         <div>
           <h1 className="contact-title">Got a workflow that drives you mad?</h1>
           <FlowRule />
           <p className="contact-intro">
-            Describe the annoying part in your own words. Which tools, who
-            does it, how often, and what goes wrong. You will get a straight
-            answer: a process change, a connection between tools, a small
-            build, or nothing at all.
+            Describe the annoying part in your own words: which tools, who does
+            it, how often, and what goes wrong. That is enough to start.
           </p>
           <p className="contact-next">
-            Next: I reply by email with a few questions, we look at the
-            workflow together, and you get my view on what I would change.
+            I’ll reply with a few questions. If I think I can help, I’ll tell
+            you what I’d tackle first and what working together could look
+            like.
           </p>
           <p className="contact-alt">
             Prefer email?{" "}

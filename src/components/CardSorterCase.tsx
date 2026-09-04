@@ -8,10 +8,10 @@ export default function CardSorterCase() {
     <section id="work" className="section">
       <div className="wrap section-grid">
         <div className="section-side">
-          <p className="label is-muted">02 · Work</p>
+          <p className="label is-muted">Case study</p>
           <p className="section-note">
-            One real workflow, start to finish: a person, a bottleneck, a
-            decision, and the smallest fix that held up in daily use.
+            One real workflow, followed from the bottleneck to a fix that held
+            up in daily use.
           </p>
         </div>
 
@@ -19,16 +19,16 @@ export default function CardSorterCase() {
           <h2 className="section-title">Card Sorter</h2>
           <p className="lede">
             A freelancer was spending days sorting business credit-card
-            transactions by hand. The process could not be simplified enough on
-            its own, so a small tool was justified.
+            transactions by hand.
           </p>
 
           <dl className="ledger">
             <div className="ledger-row">
               <dt className="label is-muted ledger-key">Problem</dt>
               <dd className="ledger-val">
-                Every statement meant days of manually sorting business
-                credit-card transactions for bookkeeping.
+                Every card statement had to be categorised transaction by
+                transaction before it could go to the bookkeeper. It took days,
+                and it kept coming back.
               </dd>
             </div>
             <div className="ledger-row">
@@ -50,25 +50,18 @@ export default function CardSorterCase() {
               <dt className="label is-muted ledger-key">Intervention</dt>
               <dd className="ledger-val">
                 Card Sorter, built around his real workflow and improved while
-                he used it. It reads a statement, organises the transactions and
-                learns from his corrections.
-              </dd>
-            </div>
-            <div className="ledger-row">
-              <dt className="label is-muted ledger-key">Scope</dt>
-              <dd className="ledger-val">
-                Deliberately small. It takes an uploaded statement, sorts it,
-                and hands over bookkeeping-ready data. No bank connection, no
-                accounting suite, no product for everyone. Just the step that
-                hurt.
+                he used it. It reads an uploaded statement, organises the
+                transactions, learns from his corrections and hands over
+                bookkeeping-ready data. Nothing more: no bank connection, no
+                accounting suite. Just the step that hurt.
               </dd>
             </div>
             <div className="ledger-row">
               <dt className="label is-muted ledger-key">Evidence</dt>
               <dd className="ledger-val">
-                <span className="evidence-figure">Almost 700</span> real
-                transactions sorted while he used it, with the tool adjusted
-                along the way on his actual statements.
+                Used on <span className="evidence-figure">almost 700</span> real
+                transactions in his actual bookkeeping, with the tool adjusted
+                along the way.
               </dd>
             </div>
           </dl>

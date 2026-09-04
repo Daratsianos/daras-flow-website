@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-col">
             <p className="label footer-heading">Daras Flow</p>
-            <p>Workflow improvement for small businesses and teams.</p>
+            <p>Workflow improvement for small businesses, teams and independent professionals.</p>
             <p>Panos Daratsianos · Zaandam, Netherlands</p>
           </div>
           <div className="footer-col">

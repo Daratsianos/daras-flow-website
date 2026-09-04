@@ -89,10 +89,9 @@ export default function AboutPage() {
               predictable. Maybe even boring, in the best way.”
             </p>
             <p>
-              I call myself a process optimization artisan. I take personal
-              pride in the work, refuse to ship compromised or bloated
-              solutions, and own the entire lifecycle of what I make, from
-              understanding the problem to the last adjustment.
+              I call myself a process optimization artisan. I like owning the
+              whole problem, from understanding how the work actually happens
+              to testing whether the fix works in reality.
             </p>
             <p>
               My way of working is simple. I map how people actually work,
@@ -109,8 +108,8 @@ export default function AboutPage() {
               scientific: measure, test, learn, improve.
             </p>
             <p>
-              Daras Flow is my independent practice: I answer to the people I
-              work for, not to a hierarchy. On the side I run a{" "}
+              Daras Flow is my independent practice, for small businesses,
+              teams and independent professionals. On the side I run a{" "}
               <Link href="/lab">Lab</Link> of small apps, built with
               AI-assisted development, mostly to scratch my own itches. It keeps
               me honest about what building actually costs, and about when it

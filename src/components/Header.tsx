@@ -19,7 +19,12 @@ export default function Header() {
 
   return (
     <header className="site-header">
-      <div className="wrap site-header-inner">
+      <div
+        className="wrap site-header-inner"
+        onKeyDown={(e) => {
+          if (e.key === "Escape") setOpen(false);
+        }}
+      >
         <Link href="/" className="brand" aria-label="Daras Flow, home">
           <BrandMark className="brand-mark" />
           <span className="brand-name">Daras Flow</span>

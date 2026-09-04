@@ -10,7 +10,7 @@ import { apps, labOnly } from "@/lib/apps";
 export const metadata: Metadata = {
   title: "Daras Flow | Fix the workflow. Build only what’s needed.",
   description:
-    "Workflow improvement for small businesses and teams. Panos Daratsianos maps how the work actually happens, finds the friction, and chooses the smallest fix: a better process, an automation, or a small tool between two systems.",
+    "Workflow improvement for small businesses, teams and independent professionals. Panos Daratsianos maps how the work actually happens, finds the friction, and chooses the smallest fix: a better process, an automation, or a small tool between two systems.",
   alternates: {
     canonical: "/",
   },
@@ -137,16 +137,16 @@ export default function Home() {
               <p className="label is-muted">Typical starting points</p>
               <ul className="hero-list">
                 <li>
-                  The same information typed into email, a spreadsheet and a
-                  system, by hand, every week.
+                  The same information gets typed into email, a spreadsheet and
+                  another system by hand.
                 </li>
                 <li>
-                  Customer intake or bookkeeping that runs on messages,
-                  spreadsheets and chasing people.
-                </li>
-                <li>
-                  Two tools that almost work together, with one painful manual
+                  Two tools almost work together, except for one painful manual
                   step in between.
+                </li>
+                <li>
+                  Customer intake or administration runs on messages,
+                  spreadsheets and chasing people.
                 </li>
               </ul>
               <Link href="#problems" className="textlink">
@@ -162,10 +162,7 @@ export default function Home() {
       <section id="approach" className="section">
         <div className="wrap section-grid">
           <div className="section-side">
-            <p className="label is-muted">01 · Approach</p>
-            <p className="section-note">
-              Build comes after understand and simplify. Not before.
-            </p>
+            <p className="label is-muted">Approach</p>
           </div>
           <div>
             <h2 className="section-title">Start with the workflow.</h2>
@@ -194,11 +191,10 @@ export default function Home() {
               <li className="step">
                 <span className="step-node is-optional" aria-hidden="true" />
                 <h3 className="step-title">
-                  Build{" "}
-                  <small>only if needed</small>
+                  Build, <span className="step-optional">if&nbsp;needed</span>
                 </h3>
                 <div className="step-body">
-                  <p className="step-q">What is still missing?</p>
+                  <p className="step-q">What is still missing after simplifying?</p>
                   <p>
                     An automation, an integration, a small piece of software, a
                     form, an interface or a website. Only the piece that is
@@ -211,7 +207,8 @@ export default function Home() {
                 <h3 className="step-title">Test</h3>
                 <div className="step-body">
                   <p className="step-q">
-                    Does the new workflow actually make the work better?
+                    Does the new workflow actually work better for the people
+                    using it?
                   </p>
                   <p>
                     Checked on real work, with the people who do it. Then
@@ -234,7 +231,7 @@ export default function Home() {
       <section id="problems" className="section">
         <div className="wrap section-grid">
           <div className="section-side">
-            <p className="label is-muted">03 · Problems</p>
+            <p className="label is-muted">Problems</p>
             <p className="section-note">
               If one of these is yours, that is usually where we start.
             </p>
@@ -257,22 +254,12 @@ export default function Home() {
       <section id="why" className="section">
         <div className="wrap section-grid">
           <div className="section-side">
-            <p className="label is-muted">04 · Why me</p>
-            <p className="section-note">
-              Process thinking, plus the ability to build.
-            </p>
+            <p className="label is-muted">Why me</p>
           </div>
           <div>
             <h2 className="section-title">
               The part between the recommendation and the build.
             </h2>
-            <p className="section-intro">
-              A process consultant finds the problem and writes the
-              recommendation. A developer builds what they are asked to build. I
-              do the part in between: work out what is actually happening,
-              decide what should change, and build the missing piece myself when
-              it is needed.
-            </p>
             <dl className="ledger">
               <div className="ledger-row compare-row">
                 <dt className="compare-who">A process consultant</dt>
@@ -331,7 +318,6 @@ export default function Home() {
               ))}
             </ul>
             <p className="lab-foot">
-              Card Sorter started in the Lab too. It is the case study above.{" "}
               <Link href="/lab" className="textlink">
                 Everything in the Lab
               </Link>
@@ -359,11 +345,10 @@ export default function Home() {
               />
               <div className="about-text">
                 <p>
-                  I take pride in the work and own the whole lifecycle of what I
-                  make, from understanding the problem to the last adjustment.
-                  I map how people actually work, find what slows them down, and
-                  choose the smallest intervention that solves it: sometimes a
-                  process change, sometimes something I build.
+                  I like owning the whole problem, from understanding how the
+                  work actually happens to testing whether the fix works in
+                  reality. I map how people actually work, find what slows them
+                  down, and choose the smallest intervention that solves it.
                 </p>
                 <p>
                   <Link href="/about" className="textlink">
@@ -386,13 +371,13 @@ export default function Home() {
             <h2 className="contact-title">Got a workflow that drives you mad?</h2>
             <FlowRule />
             <p className="contact-intro">
-              Show me what’s clunky. Tell me where the work gets stuck. I’ll tell
-              you honestly whether it needs a process change, a connection
-              between tools, a small build, or nothing at all.
+              Show me what’s clunky and where the work gets stuck, in your own
+              words.
             </p>
             <p className="contact-next">
-              Next: I reply by email with a few questions, we look at the
-              workflow together, and you get my view on what I would change.
+              I’ll reply with a few questions. If I think I can help, I’ll tell
+              you what I’d tackle first and what working together could look
+              like.
             </p>
             <p className="contact-alt">
               Prefer email?{" "}
