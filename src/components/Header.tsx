@@ -1,65 +1,62 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
+import BrandMark from "@/components/BrandMark";
+
+const NAV = [
+  { href: "/#work", label: "Work", match: null },
+  { href: "/#approach", label: "Approach", match: null },
+  { href: "/lab", label: "Lab", match: "/lab" },
+  { href: "/about", label: "About", match: "/about" },
+  { href: "/contact", label: "Contact", match: "/contact" },
+];
 
 export default function Header() {
   const pathname = usePathname();
-
-  const isLinkActive = (path: string) => {
-    if (path === "/") {
-      return pathname === "/";
-    }
-    return pathname.startsWith(path);
-  };
-
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (pathname === href) {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
+  const [open, setOpen] = useState(false);
 
   return (
-    <header className="header-wrapper">
-      <div className="wrapper header">
-        <Link href="/" className="logo-link" onClick={(e) => handleLinkClick(e, "/")}>
-          <Image
-            src="/logo.png"
-            alt="Daras Flow Logo"
-            width={120}
-            height={40}
-            className="logo-img"
-            style={{ width: "auto", height: "32px", objectFit: "contain" }}
-            priority
-            // The optimizer's webp output flattens the logo's transparency
-            // onto white, which breaks the dark-mode invert filter.
-            unoptimized
-          />
+    <header className="site-header">
+      <div className="wrap site-header-inner">
+        <Link href="/" className="brand" aria-label="Daras Flow, home">
+          <BrandMark className="brand-mark" />
+          <span className="brand-name">Daras Flow</span>
         </Link>
-        <nav className="nav">
-          <Link
-            href="/apps"
-            className={`nav-link ${isLinkActive("/apps") ? "active" : ""}`}
-            onClick={(e) => handleLinkClick(e, "/apps")}
-          >
-            Apps
-          </Link>
-          <Link
-            href="/about"
-            className={`nav-link ${isLinkActive("/about") ? "active" : ""}`}
-            onClick={(e) => handleLinkClick(e, "/about")}
-          >
-            About
-          </Link>
-          <Link
-            href="/vibe-coding"
-            className={`nav-link ${isLinkActive("/vibe-coding") ? "active" : ""}`}
-            onClick={(e) => handleLinkClick(e, "/vibe-coding")}
-          >
-            Vibe Coding
-          </Link>
+
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls="site-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? "Close" : "Menu"}
+        </button>
+
+        <nav
+          id="site-nav"
+          className={`site-nav${open ? " is-open" : ""}`}
+          aria-label="Main"
+        >
+          <ul className="site-nav-list">
+            {NAV.map((item) => {
+              const active = item.match ? pathname.startsWith(item.match) : false;
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={`site-nav-link${active ? " is-active" : ""}`}
+                    aria-current={active ? "page" : undefined}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </nav>
       </div>
     </header>

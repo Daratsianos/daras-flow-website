@@ -1,11 +1,24 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt =
-  "Daras Flow. Practical apps and workflow tools that reduce friction.";
+  "Daras Flow. Fix the workflow. Build only what’s needed.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function Image() {
+const PAPER = "#f6f4ee";
+const INK = "#15202b";
+const MUTED = "#5b6673";
+const GREEN = "#1e7c65";
+const NAVY = "#0f2f59";
+const RUST = "#b0452b";
+
+export default async function Image() {
+  const fraunces = await readFile(
+    join(process.cwd(), "src/app/fonts/Fraunces-500.ttf")
+  );
+
   return new ImageResponse(
     (
       <div
@@ -15,102 +28,90 @@ export default function Image() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          padding: "72px 80px",
-          backgroundColor: "#0b0f17",
-          backgroundImage:
-            "radial-gradient(circle at 12% 16%, rgba(52,211,153,0.20), transparent 42%), radial-gradient(circle at 88% 84%, rgba(56,189,248,0.16), transparent 46%)",
-          fontFamily: "sans-serif",
+          padding: "64px 72px 56px",
+          backgroundColor: PAPER,
+          color: INK,
+          fontFamily: "Fraunces",
         }}
       >
         {/* Brand row */}
-        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            fontFamily: "sans-serif",
+            fontSize: 22,
+            letterSpacing: "0.16em",
+            fontWeight: 700,
+          }}
+        >
+          <div style={{ display: "flex" }}>DARAS FLOW</div>
           <div
             style={{
               display: "flex",
-              width: "52px",
-              height: "52px",
-              borderRadius: "14px",
-              backgroundColor: "#34d399",
-              alignItems: "center",
-              justifyContent: "center",
+              color: MUTED,
+              fontWeight: 500,
+              fontSize: 18,
+              letterSpacing: "0.1em",
             }}
           >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#0b0f17"
-              strokeWidth="3.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              color: "#e2e8f0",
-              fontSize: "30px",
-              fontWeight: 700,
-              letterSpacing: "0.18em",
-            }}
-          >
-            DARAS FLOW
+            WORKFLOW IMPROVEMENT · SMALL BUSINESSES & TEAMS
           </div>
         </div>
 
         {/* Headline */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "30px" }}>
-          <div
-            style={{
-              display: "flex",
-              width: "72px",
-              height: "6px",
-              borderRadius: "4px",
-              backgroundColor: "#34d399",
-            }}
-          />
-          <div
-            style={{
-              display: "flex",
-              color: "#f8fafc",
-              fontSize: "70px",
-              fontWeight: 700,
-              lineHeight: 1.08,
-              letterSpacing: "-0.02em",
-              maxWidth: "940px",
-            }}
-          >
-            Practical apps & workflow tools that reduce friction.
-          </div>
-        </div>
-
-        {/* Footer row */}
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
+            fontSize: 84,
+            lineHeight: 1.02,
+            letterSpacing: "-0.015em",
+            maxWidth: "980px",
           }}
         >
+          Fix the workflow. Build only what’s needed.
+        </div>
+
+        {/* Flow line: tangle (rust, dotted) resolving into a clean line and the chevrons */}
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <svg
+            width="1056"
+            height="150"
+            viewBox="0 0 1200 170"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 85 C20 65 45 20 70 40 C95 60 110 150 140 130 C170 110 150 70 120 80 C100 90 170 30 210 45 C250 60 240 150 280 130 C320 110 300 60 340 60 C380 60 300 130 320 120 C360 100 360 30 400 40 C450 55 430 150 470 125 C510 100 500 70 540 75 C580 80 580 125 620 110 C660 95 650 75 700 80 C750 85 760 100 820 88 C880 76 900 96 950 90 C1000 84 1030 84 1110 85"
+              stroke={RUST}
+              strokeOpacity="0.55"
+              strokeWidth="3"
+              strokeLinecap="round"
+              strokeDasharray="2 9"
+            />
+            <path d="M0 85 L1110 85" stroke={INK} strokeWidth="4" strokeLinecap="round" />
+            <path d="M1134 63 L1156 85 L1134 107" stroke={GREEN} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M1164 63 L1186 85 L1164 107" stroke={NAVY} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
           <div
             style={{
               display: "flex",
-              color: "#cbd5e1",
-              fontSize: "27px",
-              fontWeight: 600,
+              justifyContent: "space-between",
+              fontFamily: "sans-serif",
+              fontSize: 20,
+              color: MUTED,
             }}
           >
-            darasflow.com
-          </div>
-          <div style={{ display: "flex", color: "#94a3b8", fontSize: "24px" }}>
-            Panos Daratsianos
+            <div style={{ display: "flex" }}>Panos Daratsianos · Zaandam, NL</div>
+            <div style={{ display: "flex" }}>darasflow.com</div>
           </div>
         </div>
       </div>
     ),
-    { ...size }
+    {
+      ...size,
+      fonts: [{ name: "Fraunces", data: fraunces, weight: 500, style: "normal" }],
+    }
   );
 }

@@ -1,46 +1,57 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Link from "next/link";
+import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+  display: "swap",
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
+
+const SITE_DESCRIPTION =
+  "Daras Flow is the workflow improvement practice of Panos Daratsianos. I help small businesses and teams remove friction from the way they work: a better process, an automation, or a small tool between two systems, built only when it is needed.";
 
 export const metadata: Metadata = {
   title: {
-    default: "Daras Flow | Practical Apps & Automation",
+    default: "Daras Flow | Fix the workflow. Build only what’s needed.",
     template: "%s | Daras Flow",
   },
-  description:
-    "Daras Flow builds simple, lightweight digital tools and workflow automations for real-world problems. Founded by Panos Daratsianos.",
+  description: SITE_DESCRIPTION,
   keywords: [
     "Daras Flow",
     "Panos Daratsianos",
-    "Workflow Automation",
-    "Software Studio",
+    "workflow improvement",
+    "process improvement",
+    "workflow automation",
+    "small business operations",
+    "finance operations",
     "Card Sorter",
-    "Pare Gala",
-    "HonestCal",
-    "Chroma",
-    "Process Optimization",
-    "Finance Transformation",
+    "Zaandam",
+    "Netherlands",
   ],
   authors: [{ name: "Panos Daratsianos" }],
   creator: "Panos Daratsianos",
   metadataBase: new URL("https://darasflow.com"),
   openGraph: {
-    title: "Daras Flow | Practical Apps & Automation",
-    description:
-      "Daras Flow builds simple, lightweight digital tools and workflow automations for real-world problems.",
+    title: "Daras Flow | Fix the workflow. Build only what’s needed.",
+    description: SITE_DESCRIPTION,
     url: "https://darasflow.com",
     siteName: "Daras Flow",
     locale: "en_US",
@@ -48,9 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daras Flow | Practical Apps & Automation",
-    description:
-      "Daras Flow builds simple, lightweight digital tools and workflow automations for real-world problems.",
+    title: "Daras Flow | Fix the workflow. Build only what’s needed.",
+    description: SITE_DESCRIPTION,
   },
   robots: {
     index: true,
@@ -66,63 +76,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable}`}
-      suppressHydrationWarning
+      className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
-        {/* Marks JS as available before first paint so scroll-reveal styles
-            only hide content when the IntersectionObserver can reveal it. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: "document.documentElement.classList.add('js')",
-          }}
-        />
         <Header />
-        <main className="main-content">
-          {children}
-        </main>
-        <footer className="footer-wrapper">
-          <div className="wrapper footer">
-            <div className="footer-section">
-              <h3>Daras Flow</h3>
-              <p>Simple tools for messy real-world problems.</p>
-              <p style={{ marginTop: "0.5rem" }}>
-                Founder: Panos Daratsianos
-              </p>
-            </div>
-            <div className="footer-section">
-              <h3>Business Registry</h3>
-              <address>
-                KVK: 89150341<br />
-                BTW: NL004694906B89<br />
-                Zaandam, Netherlands<br />
-                Contact: <a href="mailto:panos@darasflow.com">panos@darasflow.com</a>
-              </address>
-            </div>
-          </div>
-          <div className="wrapper">
-            <div className="footer-bottom">
-              <p>&copy; {new Date().getFullYear()} Daras Flow. All rights reserved.</p>
-              <div className="footer-bottom-links">
-                <a
-                  href="https://www.linkedin.com/in/panos-daratsianos-48279955/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-                <a
-                  href="https://github.com/Daratsianos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-                <Link href="/privacy">Privacy Policy</Link>
-              </div>
-            </div>
-          </div>
-        </footer>
+        <main>{children}</main>
+        <Footer />
         <Analytics />
       </body>
     </html>

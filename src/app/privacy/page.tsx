@@ -1,68 +1,73 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy policy",
   description:
-    "Privacy Policy for Daras Flow apps and websites. We respect your data privacy, collect only necessary information, and never sell personal data.",
+    "Privacy policy for the Daras Flow website and apps. Only necessary data is collected, nothing is sold, and deletion requests are honoured.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {
   return (
-    <div className="wrapper">
-      <section className="page-header">
-        <h1>Privacy Policy</h1>
-        <p className="muted">Effective date: June 1, 2026</p>
-      </section>
-
-      <section className="prose">
-        <p>
-          At Daras Flow, we operate small, lightweight software applications and marketing websites. 
-          We believe in keeping things simple, including how we handle your personal information.
-        </p>
-
-        <div>
-          <h2 className="subheading">1. Data Collection</h2>
-          <p>
-            We only collect data that is strictly required for core app functionality and to ensure a stable user experience. 
-            Many of our tools run locally on your device or utilize minimal cloud synchronization. We do not engage in silent background tracking or profile users.
+    <>
+      <section className="page-head">
+        <div className="wrap">
+          <p className="label is-muted" style={{ marginBottom: "1.5rem" }}>
+            Effective date: June 1, 2026
           </p>
-        </div>
-
-        <div>
-          <h2 className="subheading">2. Data Use and Sharing</h2>
-          <p>
-            We do not sell, rent, or trade your personal data to third parties under any circumstances. 
-            We do not use your information for marketing or advertisement targeting.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="subheading">3. Your Rights & Data Deletion</h2>
-          <p>
-            You have full control over your data. If you have any privacy questions, want to know what data we hold, or wish to request the immediate deletion of your account or data, please contact us directly.
-          </p>
-        </div>
-
-        <div>
-          <h2 className="subheading">4. App-Specific Privacy</h2>
-          <p>
-            Specific details regarding the data storage and transmission of individual apps (like <em>Card Sorter</em>, <em>Pare Gala</em>, <em>HonestCal</em> or <em>Chroma</em>) will be detailed inside those respective applications or expanded on this page as they transition from development to public release.
-          </p>
-        </div>
-
-        <div className="card" style={{ marginTop: "2rem", padding: "1.5rem" }}>
-          <h3 style={{ fontSize: "1.1rem", marginBottom: "0.5rem" }}>Contact Us</h3>
-          <p style={{ margin: 0, fontSize: "0.95rem" }}>
-            For all privacy-related requests and questions, please reach out to:
-          </p>
-          <p style={{ margin: "0.5rem 0 0 0", fontSize: "0.95rem" }}>
-            <strong>Email:</strong> <a href="mailto:panos@darasflow.com">panos@darasflow.com</a>
-          </p>
-          <p style={{ margin: "0.25rem 0 0 0", fontSize: "0.95rem" }}>
-            <strong>Location:</strong> Zaandam, Netherlands
-          </p>
+          <h1 className="page-title">Privacy policy</h1>
         </div>
       </section>
-    </div>
+
+      <section className="wrap">
+        <div className="prose">
+          <p>
+            Daras Flow operates this website and a few small software
+            applications. We keep things simple, including how we handle your
+            personal information.
+          </p>
+
+          <h2>1. Data collection</h2>
+          <p>
+            We only collect data that is strictly required for core app
+            functionality and a stable user experience. Many of our tools run
+            locally on your device or use minimal cloud synchronisation. We do
+            not run silent background tracking or profile users.
+          </p>
+
+          <h2>2. Data use and sharing</h2>
+          <p>
+            We do not sell, rent or trade your personal data to third parties
+            under any circumstances. We do not use your information for
+            marketing or advertisement targeting.
+          </p>
+
+          <h2>3. Your rights and data deletion</h2>
+          <p>
+            You have full control over your data. If you have privacy questions,
+            want to know what data we hold, or want your account or data
+            deleted, contact us directly and we will take care of it.
+          </p>
+
+          <h2>4. App-specific privacy</h2>
+          <p>
+            Specific details about data storage and transmission in individual
+            apps (Card Sorter, Pare Gala, HonestCal or Chroma) are provided
+            inside those applications or added to this page as they move from
+            development to public release.
+          </p>
+
+          <h2>Contact</h2>
+          <p>
+            For all privacy-related requests and questions:{" "}
+            <a href="mailto:panos@darasflow.com">panos@darasflow.com</a>
+            <br />
+            Daras Flow, Zaandam, Netherlands
+          </p>
+        </div>
+      </section>
+    </>
   );
 }
