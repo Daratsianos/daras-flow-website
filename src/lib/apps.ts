@@ -1,12 +1,16 @@
 // The Lab: small apps built to scratch real itches. Card Sorter is also the
 // flagship workflow case study on the home page.
 
+export const SITE_URL = "https://www.darasflow.com";
+
 export type LabApp = {
   slug: string;
   name: string;
   status: string;
   url: string;
   playUrl?: string;
+  /** Three-to-eight-word description for the one-line Lab strip. */
+  short: string;
   tagline: string;
   story: string;
   tryLabel: string;
@@ -23,6 +27,7 @@ export const apps: LabApp[] = [
     name: "Card Sorter",
     status: "Beta · web",
     url: "https://card-sorter-one.vercel.app",
+    short: "sorts card statements for bookkeeping",
     tagline:
       "Turns business credit-card statements into categorised, bookkeeping-ready data.",
     story:
@@ -41,6 +46,7 @@ export const apps: LabApp[] = [
     status: "Android · web",
     url: "https://paregala.com",
     playUrl: "https://play.google.com/store/apps/details?id=app.paregala.twa",
+    short: "shared grocery list for families",
     tagline: "A shared, real-time grocery list for families.",
     story:
       "Named after the classic Greek household emergency, “Pare gala!” (“Get milk!”). Shopping lists get messy with several editors and spotty store wifi, so this one syncs instantly and does nothing else.",
@@ -58,6 +64,7 @@ export const apps: LabApp[] = [
     status: "Android · web",
     url: "https://honestcal.com",
     playUrl: "https://play.google.com/store/apps/details?id=com.honestcal.app",
+    short: "calorie estimates with confidence instead of fake precision",
     tagline:
       "Calorie and macro estimates from a photo, a description or a barcode, with confidence levels instead of fake precision.",
     story:
@@ -75,6 +82,7 @@ export const apps: LabApp[] = [
     name: "Chroma",
     status: "Beta · web",
     url: "https://chroma-game-beta.vercel.app",
+    short: "family photos turned into colouring pages",
     tagline:
       "A paint-by-number colouring game that turns your own family photos into colouring pages.",
     story:

@@ -22,6 +22,20 @@ export default function AboutPage() {
           </p>
           <h1 className="page-title">Panos Daratsianos</h1>
           <FlowRule />
+          <dl className="scan">
+            <div>
+              <dt className="label is-muted">How I think</dt>
+              <dd>Process first. Technology second.</dd>
+            </div>
+            <div>
+              <dt className="label is-muted">Background</dt>
+              <dd>Booking.com · Rituals · VanMoof · Hitachi</dd>
+            </div>
+            <div>
+              <dt className="label is-muted">How I work</dt>
+              <dd>Measure. Test. Learn. Improve.</dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -63,22 +77,6 @@ export default function AboutPage() {
               Code on GitHub
             </a>
           </p>
-          <div className="experience">
-            <p className="label is-muted">Experience</p>
-            <p>
-              <strong>Booking.com</strong>
-              <br />
-              <strong>Rituals</strong>
-              <br />
-              <strong>VanMoof</strong>
-              <br />
-              <strong>Hitachi</strong>
-            </p>
-            <p className="experience-note">
-              Process improvement, finance transformation, operational
-              workflows, systems and automation.
-            </p>
-          </div>
         </aside>
 
         <div>
@@ -104,8 +102,7 @@ export default function AboutPage() {
             <p>
               That comes from years of hands-on work in finance operations, ERP
               workflows, process improvement and automation, inside fast-moving
-              product, finance and operations teams. The approach stays
-              scientific: measure, test, learn, improve.
+              product, finance and operations teams.
             </p>
             <p>
               Daras Flow is my independent practice, for small businesses,

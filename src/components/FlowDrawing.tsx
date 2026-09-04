@@ -2,12 +2,14 @@
 
 import { useEffect, useRef } from "react";
 
-// The one drawing on the site: a tangled workflow (rust, dotted: how the work
-// happens now) that resolves at a single green point (the fix) into a clean
-// line ending in the brand's double chevron (how it runs afterwards).
+// The one drawing on the site, and the brand's signature idea:
+// messy workflow → precise intervention → clean flow.
 //
-// Without JavaScript, or with reduced motion, the final state is shown.
-// With JavaScript the solid line starts tangled and untangles once on load.
+// On load it plays once, in order: the rust tangle enters (how the work
+// happens now), the green intervention point appears, the solid line
+// resolves from tangled to straight, and the clean line runs on into the
+// brand's double chevron. Nothing loops. Reduced motion, or no JavaScript,
+// shows the final state.
 
 type Pt = [number, number];
 
@@ -64,54 +66,82 @@ const GHOST_D = toPath(TANGLE.slice(0, TANGLE_POINTS));
 const TANGLE_D = toPath(TANGLE);
 const CLEAN_D = toPath(CLEAN);
 
-const DELAY_MS = 600;
-const DURATION_MS = 2000;
+// Timeline, in ms from mount. Mirrored by the CSS fallback delays.
+const T_GHOST = 300;
+const T_FIX = 1300;
+const T_LIVE = 1500;
+const T_MORPH_START = 1700;
+const MORPH_MS = 1500;
+const T_CHEVRONS = 3200;
 
 export default function FlowDrawing() {
+  const rootRef = useRef<HTMLElement>(null);
   const liveRef = useRef<SVGPathElement>(null);
-  const marksRef = useRef<SVGGElement>(null);
 
   useEffect(() => {
+    const root = rootRef.current;
     const live = liveRef.current;
-    const marks = marksRef.current;
-    if (!live || !marks) return;
+    if (!root || !live) return;
 
-    live.classList.add("is-live");
+    const ghost = root.querySelector<SVGPathElement>(".flow-ghost");
+    const fix = root.querySelector<SVGCircleElement>(".flow-fix");
+    const chevrons = root.querySelector<SVGGElement>(".flow-chevrons");
+    if (!ghost || !fix || !chevrons) return;
+
+    // JavaScript is in charge from here; the CSS fallback timeline steps aside.
+    root.classList.add("is-scripted");
 
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
     if (reduceMotion) {
-      marks.classList.add("is-in");
+      ghost.classList.add("is-in");
+      fix.classList.add("is-in");
+      live.classList.add("is-in");
+      chevrons.classList.add("is-in");
       return;
     }
 
     live.setAttribute("d", TANGLE_D);
+    const timers: number[] = [];
     let raf = 0;
-    let start = 0;
+    const at = (ms: number, fn: () => void) => {
+      timers.push(window.setTimeout(fn, ms));
+    };
     const ease = (t: number) => 1 - Math.pow(1 - t, 3);
 
-    const frame = (now: number) => {
-      if (!start) start = now;
-      const t = Math.min(1, Math.max(0, (now - start - DELAY_MS) / DURATION_MS));
-      const e = ease(t);
-      const pts: Pt[] = TANGLE.map((p, i) => [
-        p[0] + (CLEAN[i][0] - p[0]) * e,
-        p[1] + (CLEAN[i][1] - p[1]) * e,
-      ]);
-      live.setAttribute("d", toPath(pts));
-      if (t < 1) {
-        raf = requestAnimationFrame(frame);
-      } else {
-        marks.classList.add("is-in");
-      }
+    at(T_GHOST, () => ghost.classList.add("is-in"));
+    at(T_FIX, () => fix.classList.add("is-in"));
+    at(T_LIVE, () => live.classList.add("is-in"));
+    at(T_MORPH_START, () => {
+      let start = 0;
+      const frame = (now: number) => {
+        if (!start) start = now;
+        const t = Math.min(1, (now - start) / MORPH_MS);
+        const e = ease(t);
+        const pts: Pt[] = TANGLE.map((p, i) => [
+          p[0] + (CLEAN[i][0] - p[0]) * e,
+          p[1] + (CLEAN[i][1] - p[1]) * e,
+        ]);
+        live.setAttribute("d", toPath(pts));
+        if (t < 1) raf = requestAnimationFrame(frame);
+      };
+      raf = requestAnimationFrame(frame);
+    });
+    at(T_CHEVRONS, () => chevrons.classList.add("is-in"));
+
+    return () => {
+      timers.forEach((id) => window.clearTimeout(id));
+      cancelAnimationFrame(raf);
     };
-    raf = requestAnimationFrame(frame);
-    return () => cancelAnimationFrame(raf);
   }, []);
 
   return (
-    <figure className="flow" aria-label="A tangled workflow resolving, at one point of change, into a straight line">
+    <figure
+      ref={rootRef}
+      className="flow"
+      aria-label="A tangled workflow, one point of intervention, and the same work running as a straight line afterwards"
+    >
       <svg
         className="flow-svg"
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
@@ -121,8 +151,8 @@ export default function FlowDrawing() {
       >
         <path className="flow-ghost" d={GHOST_D} />
         <path ref={liveRef} className="flow-live" d={CLEAN_D} />
-        <g ref={marksRef} className="flow-marks">
-          <circle className="flow-fix" cx={FIX_X} cy={MID} r="9" />
+        <circle className="flow-fix" cx={FIX_X} cy={MID} r="9" />
+        <g className="flow-chevrons">
           <path className="flow-chevron-a" d="M1134 138 L1156 160 L1134 182" />
           <path className="flow-chevron-b" d="M1164 138 L1186 160 L1164 182" />
         </g>

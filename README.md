@@ -1,6 +1,6 @@
 # Daras Flow — website
 
-Marketing site for [Daras Flow](https://darasflow.com), the workflow improvement
+Marketing site for [Daras Flow](https://www.darasflow.com), the workflow improvement
 practice of Panos Daratsianos. The site positions Daras Flow as a process and
 workflow practice that can also build the missing piece of software when
 building is the right intervention. It carries one flagship case study (Card
@@ -72,5 +72,5 @@ permanently to `/lab` (see [`next.config.ts`](next.config.ts)).
 ## Deployment
 
 Optimized for [Vercel](https://vercel.com). `metadataBase` is set to
-`https://darasflow.com` in [`src/app/layout.tsx`](src/app/layout.tsx); update it
+`https://www.darasflow.com` in [`src/app/layout.tsx`](src/app/layout.tsx); update it
 if the production domain changes.

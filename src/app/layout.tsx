@@ -48,11 +48,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Panos Daratsianos" }],
   creator: "Panos Daratsianos",
-  metadataBase: new URL("https://darasflow.com"),
+  metadataBase: new URL("https://www.darasflow.com"),
   openGraph: {
     title: "Daras Flow | Fix the workflow. Build only what’s needed.",
     description: SITE_DESCRIPTION,
-    url: "https://darasflow.com",
+    url: "https://www.darasflow.com",
     siteName: "Daras Flow",
     locale: "en_US",
     type: "website",
