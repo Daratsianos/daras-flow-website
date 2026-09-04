@@ -113,7 +113,7 @@ export default function Home() {
           <h1 className="hero-title">
             Fix the workflow.{" "}
             <br />
-            Build only what’s needed.
+            Build only what’s&nbsp;needed.
           </h1>
           <div className="hero-grid">
             <div>
@@ -309,7 +309,7 @@ export default function Home() {
       <section id="lab" className="section">
         <div className="wrap section-grid">
           <div className="section-side">
-            <p className="label is-muted">05 · Lab</p>
+            <p className="label is-muted">Lab</p>
             <p className="section-note">
               Small apps built on the side. They show curiosity, product sense
               and that I finish things.
@@ -344,7 +344,7 @@ export default function Home() {
       <section id="about" className="section">
         <div className="wrap section-grid">
           <div className="section-side">
-            <p className="label is-muted">06 · About</p>
+            <p className="label is-muted">About</p>
           </div>
           <div>
             <h2 className="section-title">Panos Daratsianos</h2>
@@ -380,7 +380,7 @@ export default function Home() {
       <section id="contact" className="section">
         <div className="wrap section-grid">
           <div className="section-side">
-            <p className="label is-muted">07 · Contact</p>
+            <p className="label is-muted">Contact</p>
           </div>
           <div>
             <h2 className="contact-title">Got a workflow that drives you mad?</h2>
@@ -391,9 +391,8 @@ export default function Home() {
               between tools, a small build, or nothing at all.
             </p>
             <p className="contact-next">
-              What happens next: I reply by email with a few questions, we look
-              at the workflow together, and you get my view on what I would
-              change.
+              Next: I reply by email with a few questions, we look at the
+              workflow together, and you get my view on what I would change.
             </p>
             <p className="contact-alt">
               Prefer email?{" "}

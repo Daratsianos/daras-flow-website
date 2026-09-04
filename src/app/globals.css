@@ -28,7 +28,7 @@
   --page-max: 1120px;
   --gutter: clamp(1.25rem, 4vw, 2.5rem);
   --side-col: 12rem;
-  --section-pad: clamp(3rem, 5.5vw, 5rem);
+  --section-pad: clamp(3rem, 5vw, 4.5rem);
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
@@ -69,7 +69,9 @@ svg {
   display: block;
 }
 
-p {
+p,
+dd,
+dl {
   margin: 0;
 }
 
@@ -335,12 +337,14 @@ button {
 
 /* ---- Hero ---- */
 .hero {
-  padding-top: clamp(3rem, 7vw, 6rem);
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
   padding-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .hero-eyebrow {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--ink);
 }
 
 .hero-grid {
@@ -425,8 +429,15 @@ button {
    ending in the brand chevrons. Rust = friction, ink = the flow, green = fix. */
 .flow {
   position: relative;
-  margin: clamp(2.5rem, 6vw, 4.5rem) 0 0;
+  margin: clamp(2rem, 5vw, 3.5rem) 0 0;
   padding-top: 1.5rem;
+}
+
+.flow-caption {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 40em;
 }
 
 .flow-label {
@@ -445,7 +456,7 @@ button {
 
 .flow-label.is-fix {
   left: 46.7%;
-  bottom: 12%;
+  top: calc(1.5rem + 62%);
   transform: translateX(-50%);
   white-space: nowrap;
 }
@@ -465,17 +476,19 @@ button {
 .flow-ghost {
   fill: none;
   stroke: var(--rust);
-  stroke-opacity: 0.5;
-  stroke-width: 2;
+  stroke-opacity: 0.75;
+  stroke-width: 1.75;
   stroke-linecap: round;
-  stroke-dasharray: 2 8;
+  stroke-dasharray: 1 6;
+  vector-effect: non-scaling-stroke;
 }
 
 .flow-live {
   fill: none;
   stroke: var(--ink);
-  stroke-width: 3;
+  stroke-width: 2.5;
   stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
   opacity: 0;
   animation: flow-appear 10ms linear 2.6s forwards;
 }
@@ -500,15 +513,23 @@ button {
 
 .flow-marks path {
   fill: none;
-  stroke-width: 4;
+  stroke-width: 3.5;
   stroke-linecap: round;
   stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
 }
 
 .flow-fix {
   fill: var(--green);
   stroke: var(--paper);
-  stroke-width: 4;
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+@media (max-width: 600px) {
+  .flow-fix {
+    r: 14;
+  }
 }
 
 /* Small static signature under page titles */
@@ -629,8 +650,12 @@ button {
   }
 
   .section-note {
-    max-width: 34ch;
+    display: none;
   }
+}
+
+.page-end {
+  padding-bottom: var(--section-pad);
 }
 
 /* ---- Approach: numbered steps on a process line ---- */
@@ -735,7 +760,7 @@ button {
 
 .ledger-row {
   display: grid;
-  grid-template-columns: 9rem minmax(0, 1fr);
+  grid-template-columns: 10rem minmax(0, 1fr);
   column-gap: 1.5rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--rule);
@@ -930,7 +955,7 @@ button {
 /* ---- Why me: comparison rows ---- */
 .compare-row {
   display: grid;
-  grid-template-columns: 12rem minmax(0, 1fr);
+  grid-template-columns: 10rem minmax(0, 1fr);
   column-gap: 1.5rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--rule);
@@ -938,7 +963,8 @@ button {
 
 .compare-who {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
+  line-height: 1.3;
 }
 
 .compare-what {
@@ -956,7 +982,7 @@ button {
 
 .cred {
   display: grid;
-  grid-template-columns: 7rem minmax(0, 1fr);
+  grid-template-columns: 10rem minmax(0, 1fr);
   column-gap: 1.5rem;
   margin-top: 1.75rem;
   padding: 0.9rem 0;
@@ -997,6 +1023,7 @@ button {
 .lab-item {
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr) auto;
+  grid-template-areas: "name desc meta";
   column-gap: 1.5rem;
   padding: 1rem 0;
   border-bottom: 1px solid var(--rule);
@@ -1103,6 +1130,12 @@ button {
 .field {
   display: grid;
   gap: 0.4rem;
+}
+
+.field-help {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: -0.15rem;
 }
 
 .input,
@@ -1264,6 +1297,24 @@ button {
 }
 
 /* ---- Lab page ---- */
+.lab-pointer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
+  padding: 1.5rem 0 var(--section-pad);
+  border-top: 1px solid var(--ink);
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.lab-pointer strong {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
 .apps {
   list-style: none;
   margin: 0;
@@ -1361,6 +1412,7 @@ button {
   row-gap: 2rem;
   align-items: start;
   padding-top: 0.5rem;
+  padding-bottom: var(--section-pad);
 }
 
 .about-side {
@@ -1381,13 +1433,6 @@ button {
 
   .about-side {
     position: static;
-    grid-template-columns: auto minmax(0, 1fr);
-    column-gap: 1.5rem;
-    align-items: center;
-  }
-
-  .about-side .experience {
-    grid-column: 1 / -1;
   }
 }
 
@@ -1431,6 +1476,10 @@ button {
 .social-link:hover {
   background: var(--ink);
   color: var(--paper);
+}
+
+.about-facts .textlink {
+  font-size: 0.9rem;
 }
 
 .experience {

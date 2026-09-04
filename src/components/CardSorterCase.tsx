@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CARD_SORTER } from "@/lib/apps";
 
 // Flagship case study: evidence of the method, not an app showcase.
@@ -106,24 +107,24 @@ export default function CardSorterCase() {
                   </span>
                 </li>
                 <li className="chain-item">
-                  <span className="chain-box">Bookkeeping-ready data</span>
+                  <span className="chain-box">Bookkeeping</span>
                 </li>
               </ol>
             </div>
           </figure>
 
           <div className="case-actions">
+            <Link href="#contact" className="btn">
+              Have a step like this? Show me your workflow
+            </Link>
             <a
               href={CARD_SORTER.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn is-secondary"
+              className="textlink"
             >
               Try Card Sorter
             </a>
-            <p className="form-note">
-              A beta, built for one person’s workflow. It may not fit yours yet.
-            </p>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ src/
     robots.ts            # generated robots.txt
     globals.css          # design system + component styles
   components/
-    Header.tsx           # nav: Work, Approach, Lab, About, Contact (mobile toggle)
+    Header.tsx           # nav: Case study, Approach, Lab, About, Contact (mobile toggle)
     Footer.tsx
     BrandMark.tsx        # the Daras Flow mark as inline SVG
     FlowDrawing.tsx      # hero drawing: tangled workflow resolving into a clean line

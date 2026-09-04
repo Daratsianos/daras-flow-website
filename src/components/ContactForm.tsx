@@ -92,13 +92,17 @@ export default function ContactForm() {
         <label className="label is-muted" htmlFor="contact-message">
           What’s clunky?
         </label>
+        <p className="field-help" id="contact-message-help">
+          Where does the work get stuck? Which tools are involved? Who does it,
+          and how often?
+        </p>
         <textarea
           id="contact-message"
           className="textarea"
           required
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Where does the work get stuck? Which tools are involved? Who does it, and how often?"
+          aria-describedby="contact-message-help"
         />
       </div>
       <div className="form-actions">

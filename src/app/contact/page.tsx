@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="page-head">
+    <section className="page-head page-end">
       <div className="wrap section-grid">
         <div className="section-side">
           <p className="label is-muted">Contact</p>
@@ -25,14 +25,14 @@ export default function ContactPage() {
           <h1 className="contact-title">Got a workflow that drives you mad?</h1>
           <FlowRule />
           <p className="contact-intro">
-            Show me what’s clunky. I’ll tell you honestly whether it needs a
-            process change, a connection between tools, a small build, or
-            nothing at all.
+            Describe the annoying part in your own words. Which tools, who
+            does it, how often, and what goes wrong. You will get a straight
+            answer: a process change, a connection between tools, a small
+            build, or nothing at all.
           </p>
           <p className="contact-next">
-            What happens next: I reply by email with a few questions, we look
-            at the workflow together, and you get my view on what I would
-            change.
+            Next: I reply by email with a few questions, we look at the
+            workflow together, and you get my view on what I would change.
           </p>
           <p className="contact-alt">
             Prefer email?{" "}

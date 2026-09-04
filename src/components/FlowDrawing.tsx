@@ -129,7 +129,11 @@ export default function FlowDrawing() {
       </svg>
       <span className="label is-rust flow-label is-before">Before</span>
       <span className="label is-green flow-label is-fix">The fix</span>
-      <span className="label flow-label is-after">After</span>
+      <span className="label is-green flow-label is-after">After</span>
+      <figcaption className="flow-caption">
+        How the work happens now, one small change, and the same work without
+        the friction.
+      </figcaption>
     </figure>
   );
 }

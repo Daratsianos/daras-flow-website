@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import BrandMark from "@/components/BrandMark";
 
 const NAV = [
-  { href: "/#work", label: "Work", match: null },
+  { href: "/#work", label: "Case study", match: null },
   { href: "/#approach", label: "Approach", match: null },
   { href: "/lab", label: "Lab", match: "/lab" },
   { href: "/about", label: "About", match: "/about" },
