@@ -1411,10 +1411,6 @@ main:focus {
   color: var(--muted);
 }
 
-.contact-alt + .contact-alt {
-  margin-top: 0.25rem;
-}
-
 .form {
   display: grid;
   gap: 1.1rem;

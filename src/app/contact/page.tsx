@@ -37,7 +37,6 @@ export default function ContactPage() {
             Prefer email?{" "}
             <a href="mailto:panos@darasflow.com">panos@darasflow.com</a>
           </p>
-          <p className="contact-alt">Based in Zaandam, near Amsterdam.</p>
           <ContactForm />
         </div>
       </div>
