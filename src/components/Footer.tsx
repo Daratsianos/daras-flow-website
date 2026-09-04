@@ -21,7 +21,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn
+                LinkedIn<span className="visually-hidden"> (opens in a new tab)</span>
               </a>
             </p>
           </div>

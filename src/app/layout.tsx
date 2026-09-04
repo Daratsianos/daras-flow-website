@@ -4,11 +4,11 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Analytics } from "@vercel/analytics/react";
+import { og } from "@/lib/seo";
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  style: ["normal", "italic"],
   axes: ["opsz"],
   display: "swap",
 });
@@ -49,18 +49,9 @@ export const metadata: Metadata = {
   authors: [{ name: "Panos Daratsianos" }],
   creator: "Panos Daratsianos",
   metadataBase: new URL("https://www.darasflow.com"),
-  openGraph: {
-    title: "Daras Flow | Fix the workflow. Build only what’s needed.",
-    description: SITE_DESCRIPTION,
-    url: "https://www.darasflow.com",
-    siteName: "Daras Flow",
-    locale: "en_US",
-    type: "website",
-  },
+  openGraph: og("/"),
   twitter: {
     card: "summary_large_image",
-    title: "Daras Flow | Fix the workflow. Build only what’s needed.",
-    description: SITE_DESCRIPTION,
   },
   robots: {
     index: true,
@@ -79,8 +70,13 @@ export default function RootLayout({
       className={`${fraunces.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
+        <a href="#main" className="skip-link">
+          Skip to content
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
         <Footer />
         <Analytics />
       </body>

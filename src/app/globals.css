@@ -89,7 +89,8 @@ h4 {
 
 em {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 500;
 }
 
 a {
@@ -162,6 +163,37 @@ button {
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+/* ---- Skip link (visible only when focused) ---- */
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 100;
+  padding: 0.6rem 0.9rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 2px;
+  transform: translateY(-300%);
+}
+
+.skip-link:focus-visible {
+  transform: none;
+  outline-offset: 2px;
+}
+
+main:focus {
+  outline: none;
+}
+
+.label-optional {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 /* ---- Buttons and links ---- */
@@ -305,8 +337,8 @@ button {
 
   .site-nav {
     position: absolute;
-    left: calc(-1 * var(--gutter));
-    right: calc(-1 * var(--gutter));
+    left: 0;
+    right: 0;
     top: 100%;
     display: none;
     background: var(--paper);
@@ -334,6 +366,19 @@ button {
   .site-nav-link:hover {
     border-bottom-color: var(--rule);
   }
+
+  .brand {
+    min-height: 2.75rem;
+  }
+
+  .footer-col a,
+  .footer-bottom a,
+  .about-facts .textlink,
+  .about-text .textlink,
+  .lab-foot .textlink {
+    display: inline-block;
+    padding: 0.35rem 0;
+  }
 }
 
 /* ---- Hero ---- */
@@ -357,7 +402,7 @@ button {
 }
 
 .hero-title {
-  font-size: clamp(2.6rem, 1.2rem + 5vw, 5rem);
+  font-size: clamp(2.25rem, 1.2rem + 5vw, 5rem);
   line-height: 1.02;
   letter-spacing: -0.015em;
   max-width: 24ch;
@@ -459,13 +504,13 @@ button {
 .flow-label.is-fix {
   left: 46.7%;
   top: calc(1.5rem + 60%);
-  transform: translateX(-50%);
+  translate: -50% 0;
   white-space: nowrap;
 }
 
 @media (max-width: 600px) {
   .flow-label.is-fix {
-    display: none;
+    top: calc(1.5rem + 70%);
   }
 }
 
@@ -587,12 +632,21 @@ button {
   stroke-linejoin: round;
 }
 
-.flow-rule-jag {
+.flow-rule-tangle {
   stroke: var(--rust);
+  stroke-opacity: 0.8;
+  stroke-width: 1.5;
+  stroke-dasharray: 1 3.5;
 }
 
 .flow-rule-line {
   stroke: var(--ink);
+}
+
+.flow-rule-fix {
+  fill: var(--green);
+  stroke: var(--paper);
+  stroke-width: 1.5;
 }
 
 .flow-rule-chevron-a {
@@ -662,7 +716,6 @@ button {
 .section-note {
   margin-top: 1rem;
   font-family: var(--font-display);
-  font-style: italic;
   font-size: 1.05rem;
   line-height: 1.4;
   color: var(--ink);
@@ -767,13 +820,12 @@ button {
 }
 
 .step-optional {
-  font-style: italic;
   color: var(--green-deep);
 }
 
 .step-q {
   font-family: var(--font-display);
-  font-style: italic;
+  font-weight: 500;
   font-size: 1.15rem;
   line-height: 1.35;
 }
@@ -786,6 +838,7 @@ button {
 
 .approach-close {
   margin-top: 2.5rem;
+  text-wrap: balance;
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 1rem + 1.2vw, 1.8rem);
   line-height: 1.3;
@@ -875,6 +928,7 @@ button {
   font-size: clamp(1.2rem, 1rem + 0.7vw, 1.5rem);
   line-height: 1.35;
   max-width: 30ch;
+  text-wrap: balance;
 }
 
 .fig-feature {
@@ -924,6 +978,22 @@ button {
   line-height: 1.5;
 }
 
+.facts .fact-evidence {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.3;
+}
+
+.case-prompt {
+  margin-top: 2.25rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+}
+
+.case-prompt + .case-actions {
+  margin-top: 0.85rem;
+}
+
 @media (max-width: 900px) {
   .facts {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -938,6 +1008,12 @@ button {
 
   .fig-feature .fig-row {
     grid-template-columns: 1fr;
+    row-gap: 0.4rem;
+  }
+
+  .fig-feature .chain-box {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -1040,17 +1116,12 @@ button {
   }
 
   .chain {
-    flex-direction: column;
-    align-items: flex-start;
+    gap: 0.4rem 0.3rem;
   }
 
-  .chain-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .chain-item + .chain-item::before {
-    content: "\2193";
+  .chain-box {
+    padding: 0.35rem 0.55rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -1138,11 +1209,19 @@ button {
 }
 
 .cred .label {
-  padding-top: 0.25rem;
+  padding-top: 0.35rem;
 }
 
-.cred strong {
-  font-weight: 500;
+.cred-names {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.cred-note {
+  margin-top: 0.35rem;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
@@ -1174,7 +1253,17 @@ button {
 }
 
 .lab-line {
-  line-height: 1.8;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.lab-entry {
+  display: grid;
+  gap: 0.15rem;
 }
 
 .lab-entry a {
@@ -1189,26 +1278,25 @@ button {
 
 .lab-what {
   color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.lab-sep {
-  color: var(--faint);
-  margin: 0 0.6rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 @media (max-width: 860px) {
   .lab-strip {
     grid-template-columns: 1fr;
-    row-gap: 0.6rem;
+    row-gap: 0.9rem;
+  }
+
+  .lab-line {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 
   .lab-entry {
-    display: block;
-  }
-
-  .lab-sep {
-    display: none;
+    grid-template-columns: 7rem minmax(0, 1fr);
+    column-gap: 1rem;
+    align-items: baseline;
   }
 }
 
@@ -1461,6 +1549,12 @@ button {
   line-height: 1.02;
   letter-spacing: -0.015em;
   max-width: 16ch;
+}
+
+@media (max-width: 600px) {
+  .br-wide {
+    display: none;
+  }
 }
 
 .page-intro {

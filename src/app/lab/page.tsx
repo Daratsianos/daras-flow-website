@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import Link from "next/link";
 import GooglePlayBadge from "@/components/GooglePlayBadge";
 import { labOnly } from "@/lib/apps";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/lab",
   },
+  openGraph: og("/lab"),
 };
 
 export default function LabPage() {
@@ -22,14 +24,12 @@ export default function LabPage() {
           </p>
           <h1 className="page-title" style={{ maxWidth: "24ch" }}>
             Small things I built{" "}
-            <br />
+            <br className="br-wide" />
             because they were missing.
           </h1>
           <p className="page-intro">
-            Side projects, each one started by a real itch of my own or of
-            someone close to me. They show curiosity, product sense and that I
-            actually ship things. The workflow work is the practice; this is
-            the workshop behind it.
+            Side projects. The client work is the practice; this is the
+            workshop behind it. Each one shipped and is in use.
           </p>
         </div>
       </section>
@@ -45,6 +45,7 @@ export default function LabPage() {
                 <h2 className="app-name">
                   <a href={app.url} target="_blank" rel="noopener noreferrer">
                     {app.name}
+                    <span className="visually-hidden"> (opens in a new tab)</span>
                   </a>
                 </h2>
                 <p className="app-tagline">{app.tagline}</p>
@@ -58,7 +59,7 @@ export default function LabPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn is-secondary"
-                    aria-label={`${app.tryLabel}: ${app.name}`}
+                    aria-label={`${app.tryLabel}: ${app.name} (opens in a new tab)`}
                   >
                     {app.tryLabel}
                   </a>
@@ -85,7 +86,7 @@ export default function LabPage() {
             <p className="label is-muted">How these get built</p>
           </div>
           <div>
-            <h2 className="section-title">Small, fast, and tested on real use.</h2>
+            <h2 className="section-title">Small, fast and tested on real use.</h2>
             <div className="prose" style={{ marginTop: "1.25rem" }}>
               <p>
                 Each of these started with one specific annoyance and shipped

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -7,6 +8,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/privacy",
   },
+  openGraph: og("/privacy"),
 };
 
 export default function PrivacyPage() {
@@ -15,7 +17,7 @@ export default function PrivacyPage() {
       <section className="page-head">
         <div className="wrap">
           <p className="label is-muted" style={{ marginBottom: "1.5rem" }}>
-            Effective date: June 1, 2026
+            Effective date: 1 June 2026
           </p>
           <h1 className="page-title">Privacy policy</h1>
         </div>
@@ -34,7 +36,14 @@ export default function PrivacyPage() {
             We only collect data that is strictly required for core app
             functionality and a stable user experience. Many of our tools run
             locally on your device or use minimal cloud synchronisation. We do
-            not run silent background tracking or profile users.
+            not profile users.
+          </p>
+          <p>
+            This website uses Vercel Web Analytics, which counts page views in
+            aggregate without cookies or personal profiles. Messages sent
+            through the contact form are processed by Formspree and delivered
+            to panos@darasflow.com by email; they are used only to reply to
+            you.
           </p>
 
           <h2>2. Data use and sharing</h2>
@@ -55,8 +64,7 @@ export default function PrivacyPage() {
           <p>
             Specific details about data storage and transmission in individual
             apps (Card Sorter, Pare Gala, HonestCal or Chroma) are provided
-            inside those applications or added to this page as they move from
-            development to public release.
+            inside each application.
           </p>
 
           <h2>Contact</h2>

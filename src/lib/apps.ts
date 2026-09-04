@@ -37,7 +37,7 @@ export const apps: LabApp[] = [
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       description:
-        "Turn business credit-card statements into categorized, bookkeeping-ready data.",
+        "Turn business credit-card statements into categorised, bookkeeping-ready data.",
     },
   },
   {

@@ -24,13 +24,14 @@ export default function GooglePlayBadge({
       target="_blank"
       rel="noopener noreferrer"
       className={linkClassName}
-      aria-label={`Get it on Google Play — ${appName}`}
+      aria-label={`Get ${appName} on Google Play (opens in a new tab)`}
     >
       <Image
         src="/google-play-badge.png"
         alt="Get it on Google Play"
         width={646}
         height={250}
+        sizes={compact ? "140px" : "168px"}
         className={imageClassName}
       />
     </a>

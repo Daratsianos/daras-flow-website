@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import BrandMark from "@/components/BrandMark";
@@ -16,13 +16,19 @@ const NAV = [
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const close = () => {
+    setOpen(false);
+    // Focus would otherwise land on <body> once the menu is hidden.
+    if (open) toggleRef.current?.focus();
+  };
 
   return (
     <header className="site-header">
       <div
         className="wrap site-header-inner"
         onKeyDown={(e) => {
-          if (e.key === "Escape") setOpen(false);
+          if (e.key === "Escape") close();
         }}
       >
         <Link href="/" className="brand" aria-label="Daras Flow, home">
@@ -31,6 +37,7 @@ export default function Header() {
         </Link>
 
         <button
+          ref={toggleRef}
           type="button"
           className="nav-toggle"
           aria-expanded={open}

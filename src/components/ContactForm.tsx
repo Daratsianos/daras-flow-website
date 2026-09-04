@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const EMAIL = "panos@darasflow.com";
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xgobaryg";
@@ -13,9 +13,19 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const statusRef = useRef<HTMLParagraphElement>(null);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // Keep keyboard and screen-reader users oriented after a submission:
+  // move focus to the message that explains what happened.
+  useEffect(() => {
+    if (status === "error") statusRef.current?.focus();
+    if (status === "success") successRef.current?.focus();
+  }, [status]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (status === "sending") return;
     setStatus("sending");
     setError("");
     try {
@@ -50,7 +60,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="form-success" role="status">
+      <div className="form-success" role="status" tabIndex={-1} ref={successRef}>
         <p>
           <strong>Thanks. It’s in my inbox.</strong>
         </p>
@@ -59,11 +69,13 @@ export default function ContactForm() {
     );
   }
 
+  const sending = status === "sending";
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="field">
         <label className="label is-muted" htmlFor="contact-name">
-          Name
+          Name <span className="label-optional">(optional)</span>
         </label>
         <input
           id="contact-name"
@@ -106,14 +118,19 @@ export default function ContactForm() {
         />
       </div>
       <div className="form-actions">
-        <button type="submit" className="btn" disabled={status === "sending"}>
-          {status === "sending" ? "Sending…" : "Send it over"}
+        <button type="submit" className="btn" aria-disabled={sending}>
+          {sending ? "Sending…" : "Send it over"}
         </button>
-        {status === "error" ? (
-          <p className="form-error">{error}</p>
-        ) : (
-          <p className="form-note">Goes straight to my inbox.</p>
-        )}
+        <p
+          ref={statusRef}
+          id="form-status"
+          className={status === "error" ? "form-error" : "form-note"}
+          aria-live="polite"
+          role={status === "error" ? "alert" : undefined}
+          tabIndex={-1}
+        >
+          {status === "error" ? error : "Goes straight to my inbox."}
+        </p>
       </div>
     </form>
   );

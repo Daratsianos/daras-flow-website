@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import ContactForm from "@/components/ContactForm";
 import FlowRule from "@/components/FlowRule";
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/contact",
   },
+  openGraph: og("/contact"),
 };
 
 export default function ContactPage() {
@@ -17,17 +19,14 @@ export default function ContactPage() {
       <div className="wrap section-grid">
         <div className="section-side">
           <p className="label is-muted">Contact</p>
-          <p className="section-note">
-            Small business, team or independent professional: tell me where the
-            work gets stuck. The messier, the better.
-          </p>
         </div>
         <div>
           <h1 className="contact-title">Got a workflow that drives you mad?</h1>
           <FlowRule />
           <p className="contact-intro">
-            Describe the annoying part in your own words: which tools, who does
-            it, how often, and what goes wrong. That is enough to start.
+            Whether you run a small business, lead a team or work on your own:
+            describe the annoying part in your own words. That is enough to
+            start.
           </p>
           <p className="contact-next">
             I’ll reply with a few questions. If I think I can help, I’ll tell

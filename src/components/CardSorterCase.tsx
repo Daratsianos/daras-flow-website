@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CARD_SORTER } from "@/lib/apps";
 
 // Flagship proof: one real workflow, from bottleneck to daily use.
@@ -12,10 +11,7 @@ export default function CardSorterCase() {
         <div className="feature-head">
           <p className="label is-muted">Case study</p>
           <h2 className="section-title">Card Sorter</h2>
-          <p className="feature-sub">
-            A freelancer, a pile of business card statements, and the one step
-            that ate days.
-          </p>
+          <p className="feature-sub">One freelancer’s bookkeeping, before and after.</p>
         </div>
 
         <figure
@@ -48,10 +44,7 @@ export default function CardSorterCase() {
                 <span className="chain-box">Card statement</span>
               </li>
               <li className="chain-item">
-                <span className="chain-box is-fix">
-                  Card Sorter
-                  <small>learns from corrections</small>
-                </span>
+                <span className="chain-box is-fix">Card Sorter</span>
               </li>
               <li className="chain-item">
                 <span className="chain-box">Bookkeeping</span>
@@ -85,21 +78,22 @@ export default function CardSorterCase() {
           </div>
           <div>
             <dt className="label is-muted">Evidence</dt>
-            <dd>Used on almost 700 real transactions.</dd>
+            <dd className="fact-evidence">Used on almost 700 real transactions.</dd>
           </div>
         </dl>
 
+        <p className="case-prompt">Have a step like this?</p>
         <div className="case-actions">
-          <Link href="#contact" className="btn">
-            Have a step like this? Show me your workflow
-          </Link>
+          <a href="#contact" className="btn">
+            Show me your workflow
+          </a>
           <a
             href={CARD_SORTER.url}
             target="_blank"
             rel="noopener noreferrer"
             className="textlink"
           >
-            Try Card Sorter
+            Try Card Sorter<span className="visually-hidden"> (opens in a new tab)</span>
           </a>
         </div>
       </div>

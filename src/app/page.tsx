@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import FlowDrawing from "@/components/FlowDrawing";
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  openGraph: og("/"),
 };
 
 const jsonLd = {
@@ -100,7 +102,7 @@ export default function Home() {
       <section className="hero">
         <div className="wrap">
           <p className="label is-muted hero-eyebrow">
-            Workflow improvement for small businesses
+            Workflow improvement for small businesses and teams
           </p>
           <h1 className="hero-title">
             Fix the workflow.{" "}
@@ -117,12 +119,12 @@ export default function Home() {
                 technology.
               </p>
               <div className="hero-actions">
-                <Link href="#contact" className="btn">
+                <a href="#contact" className="btn">
                   Show me your workflow
-                </Link>
-                <Link href="#approach" className="textlink">
+                </a>
+                <a href="#approach" className="textlink">
                   See how I work
-                </Link>
+                </a>
               </div>
             </div>
             <aside className="hero-aside">
@@ -141,9 +143,9 @@ export default function Home() {
                   spreadsheets and chasing people.
                 </li>
               </ul>
-              <Link href="#problems" className="textlink">
+              <a href="#problems" className="textlink">
                 More situations
-              </Link>
+              </a>
             </aside>
           </div>
           <FlowDrawing />
@@ -265,15 +267,19 @@ export default function Home() {
                 </dd>
               </div>
             </dl>
-            <p className="cred">
+            <div className="cred">
               <span className="label is-muted">Background</span>
-              <span>
-                Years of process improvement, finance transformation,
-                operational workflows, systems and automation inside{" "}
-                <strong>Booking.com</strong>, <strong>Rituals</strong>,{" "}
-                <strong>VanMoof</strong> and <strong>Hitachi</strong>.
-              </span>
-            </p>
+              <div>
+                <p className="cred-names">
+                  Booking.com · Rituals · VanMoof · Hitachi
+                </p>
+                <p className="cred-note">
+                  Years of process improvement, finance transformation,
+                  operational workflows, systems and automation inside these
+                  companies.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -282,17 +288,17 @@ export default function Home() {
       <section id="lab" className="section is-strip">
         <div className="wrap lab-strip">
           <p className="label is-muted">From the Lab</p>
-          <p className="lab-line">
-            {labOnly.map((app, i) => (
-              <span key={app.slug} className="lab-entry">
-                {i > 0 ? <span className="lab-sep" aria-hidden="true">·</span> : null}
+          <ul className="lab-line">
+            {labOnly.map((app) => (
+              <li key={app.slug} className="lab-entry">
                 <a href={app.url} target="_blank" rel="noopener noreferrer">
                   {app.name}
-                </a>{" "}
+                  <span className="visually-hidden"> (opens in a new tab)</span>
+                </a>
                 <span className="lab-what">{app.short}</span>
-              </span>
+              </li>
             ))}
-          </p>
+          </ul>
           <Link href="/lab" className="textlink">
             Everything in the Lab
           </Link>

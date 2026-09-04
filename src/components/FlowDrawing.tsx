@@ -151,7 +151,7 @@ export default function FlowDrawing() {
       >
         <path className="flow-ghost" d={GHOST_D} />
         <path ref={liveRef} className="flow-live" d={CLEAN_D} />
-        <circle className="flow-fix" cx={FIX_X} cy={MID} r="9" />
+        <circle className="flow-fix" cx={FIX_X} cy={MID} r="11" />
         <g className="flow-chevrons">
           <path className="flow-chevron-a" d="M1134 138 L1156 160 L1134 182" />
           <path className="flow-chevron-b" d="M1164 138 L1186 160 L1164 182" />
@@ -160,10 +160,6 @@ export default function FlowDrawing() {
       <span className="label is-rust flow-label is-before">Before</span>
       <span className="label is-green flow-label is-fix">The fix</span>
       <span className="label is-green flow-label is-after">After</span>
-      <figcaption className="flow-caption">
-        How the work happens now, one small change, and the same work without
-        the friction.
-      </figcaption>
     </figure>
   );
 }

@@ -1,22 +1,23 @@
-// Small static version of the flow motif, used as a signature under page
-// titles: a short jag (friction) settling into a straight line and the
-// brand's double chevron.
+// Small static signature under page titles: the same grammar as the hero
+// drawing at miniature scale. Rust dotted tangle (friction), a green point
+// (the fix), a straight line (flow) and the brand's double chevron.
 export default function FlowRule({ className }: { className?: string }) {
   return (
     <svg
       className={`flow-rule${className ? ` ${className}` : ""}`}
-      viewBox="0 0 520 40"
+      viewBox="0 0 520 44"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       focusable="false"
     >
       <path
-        className="flow-rule-jag"
-        d="M0 20 L10 8 L22 32 L34 10 L46 28 L58 14 L70 24 L82 18 L96 21"
+        className="flow-rule-tangle"
+        d="M0 22 C14 6 22 2 30 14 C38 26 30 42 42 38 C54 34 50 6 66 8 C82 10 74 40 90 36 C104 32 100 10 116 12 C130 14 128 30 144 24 C152 21 156 22 160 22"
       />
-      <path className="flow-rule-line" d="M96 21 C120 20 140 20 470 20" />
-      <path className="flow-rule-chevron-a" d="M482 12 L490 20 L482 28" />
-      <path className="flow-rule-chevron-b" d="M496 12 L504 20 L496 28" />
+      <path className="flow-rule-line" d="M0 22 L470 22" />
+      <circle className="flow-rule-fix" cx="172" cy="22" r="4" />
+      <path className="flow-rule-chevron-a" d="M482 14 L490 22 L482 30" />
+      <path className="flow-rule-chevron-b" d="M496 14 L504 22 L496 30" />
     </svg>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { og } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 import FlowRule from "@/components/FlowRule";
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/about",
   },
+  openGraph: og("/about"),
 };
 
 export default function AboutPage() {
@@ -64,7 +66,7 @@ export default function AboutPage() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8h4.6v14H.2V8zm7.4 0h4.42v1.92h.06c.62-1.17 2.13-2.4 4.38-2.4 4.68 0 5.54 3.08 5.54 7.09V22h-4.6v-6.2c0-1.48-.03-3.39-2.07-3.39-2.07 0-2.39 1.62-2.39 3.29V22H7.6V8z" />
               </svg>
-              LinkedIn
+              LinkedIn<span className="visually-hidden"> (opens in a new tab)</span>
             </a>
           </div>
           <p className="about-facts">
@@ -74,7 +76,7 @@ export default function AboutPage() {
               rel="noopener noreferrer"
               className="textlink"
             >
-              Code on GitHub
+              Code on GitHub<span className="visually-hidden"> (opens in a new tab)</span>
             </a>
           </p>
         </aside>
@@ -87,22 +89,20 @@ export default function AboutPage() {
               predictable. Maybe even boring, in the best way.”
             </p>
             <p>
-              I call myself a process optimization artisan. I like owning the
-              whole problem, from understanding how the work actually happens
-              to testing whether the fix works in reality.
+              I call myself a process optimization artisan: I like owning the
+              whole problem, from the first conversation about how the work
+              actually happens to checking that the fix holds up in daily use.
             </p>
             <p>
-              My way of working is simple. I map how people actually work,
-              identify what slows them down, and choose the smallest
-              intervention that solves it. Sometimes that means changing the
-              process. Sometimes it means connecting tools that already exist.
-              Sometimes it means building something. Software is one possible
-              answer, and I only reach for it when the workflow asks for it.
+              My way of working is simple. I map how people actually work, find
+              what slows them down and pick the smallest fix: a process change
+              first, a connection between existing tools second, new software
+              last and only when the workflow asks for it.
             </p>
             <p>
               That comes from years of hands-on work in finance operations, ERP
               workflows, process improvement and automation, inside fast-moving
-              product, finance and operations teams.
+              product and finance teams.
             </p>
             <p>
               Daras Flow is my independent practice, for small businesses,
@@ -115,7 +115,7 @@ export default function AboutPage() {
           </div>
 
           <div className="page-cta">
-            <p>Got a workflow that drives you mad?</p>
+            <p>Tell me where the work gets stuck.</p>
             <Link href="/contact" className="btn">
               Show me your workflow
             </Link>
